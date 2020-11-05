@@ -1,0 +1,169 @@
+---
+title: "Lauren_Text_Analysis"
+author: "Lauren Simpson"
+date: "11/2/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# Load packages here
+library(tidyverse)
+library(tidytext)
+library(wordcloud)
+library(textdata)
+library(tm)
+library(xtable)
+
+knitr::opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+```{r}
+# read in covid tweets csv
+covid_tweets <- read_csv("/Users/lauren/Documents/git/Stat231 (LS)/PUG Blog Final/covid19_tweets.csv")
+```
+
+```{r}
+# keep only relevant columns in the dataset
+covid_tweets2 <- covid_tweets %>%
+  select(date, text, hashtags, source)
+
+## GENERAL WORD CLOUD
+# shows the top 50 most common words in tweets
+
+# filter out words related to covid, bc by default all tweets are about covid, and numbers
+stopwords2 <- data.frame(word = c("https", "t.co", "amp",
+                                  "corona","covid", "covid19", "coronavirus", 
+                                  "1", "2", "3", 
+                                  "10", "19", "24"))
+
+# split tweet text into unigrams, eliminate stop words and additional stop words
+covid_words <- covid_tweets2 %>%
+  unnest_tokens(output = word, input = text) %>%
+  anti_join(stop_words, by = "word") %>%
+  anti_join(stopwords2, by = "word") %>%
+  count(word, sort = TRUE) %>%
+  filter(n != 2093) # filter out "it's", did not work in stopwords2
+
+pal <- brewer.pal(8, "Dark2") # define color palette for word cloud
+
+set.seed(2) # set seed for reproducibility
+
+# create word cloud
+covid_words %>%
+  with(wordcloud(words = word, freq = n,
+                 max.words = 50, random.order = F,
+                 colors = pal,
+                 scale = c(3, 1), rot.per = 0.2,
+                 family = "sans"))
+
+```
+
+
+```{r}
+## SENTIMENT ANALYSIS
+
+# retrieving sentiments from the nrc lexicon
+nrc_lexicon <- get_sentiments("nrc")
+
+# adding nrc sentiments to the covid tweet unigram dataset (covid_words)
+nrc_tweets_sent <- covid_words %>%
+  inner_join(nrc_lexicon, by = "word") %>%
+  group_by(sentiment) %>%
+  summarise(n=n()) %>%
+  arrange(desc(n))
+
+# number of words by sentiment in the tweets
+nrc_tweets_sent %>%
+  ggplot(aes(x = reorder(sentiment,n), y = n, color = sentiment, fill = sentiment)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  labs(x = "Sentiments",
+       y = "Number of Words",
+       title="Number of Words by Sentiment in Covid-19 Tweets") +
+  guides(color = "none", fill = "none")
+
+# number of words belonging to anxiety and depression related sentiments
+nrc_tweets_words <- covid_words %>%
+  inner_join(nrc_lexicon, by = "word") %>%
+  # selecting sentiments most relevant to anxiety and depression
+  filter(sentiment %in% c("sadness", "fear", "positive", "negative")) %>%
+  arrange(sentiment, desc(n)) %>%
+  group_by(sentiment) %>%
+  slice(1:10) %>%
+  # added a-d labels to order plots such that pos/neg and fear/sadness would be paired
+  mutate(sentiment_label = case_when(sentiment == "positive" ~ "a) positive", 
+                                     sentiment == "negative" ~ "b) negative", 
+                                     sentiment == "fear" ~ "c) fear", 
+                                     sentiment == "sadness" ~ "d) sadness", TRUE ~ sentiment))
+
+# plotting words by anxiety and depression relevant sentiments
+ggplot(data = nrc_tweets_words, aes(x = reorder(word, n),
+                                    y = n,
+                                    fill = as.factor(n))) +
+  geom_col(show.legend = FALSE) +
+  labs(x = "Words", y = "Number of Words",
+       title="The top 10 most common words by relevant sentiments") +
+  facet_wrap(~sentiment_label, ncol = 2, scales = "free") +
+  coord_flip()
+
+```
+```{r}
+## COMPARISON WORD CLOUD
+
+# get dataset into the correct format for creating a term document matrix
+nrc_tweets_cloud <- covid_words %>%
+  inner_join(nrc_lexicon, by = "word") %>%
+  filter(sentiment %in% c("sadness", "fear", "positive", "negative")) %>%
+  arrange(sentiment, desc(n)) %>%
+  group_by(sentiment) %>%
+  spread(key = sentiment, value = n) %>%
+  replace_na(list(sadness = 0, fear = 0, positive= 0, negative = 0))
+
+# create a term document matrix for the comparison.cloud function
+tdm <- nrc_tweets_cloud %>%
+  # need to take unigrams in word out to create the matrix
+  select(-word) %>%
+  as.matrix() 
+
+# add the unigrams in word back in once matrix is created
+rownames(tdm) <- nrc_tweets_cloud$word
+
+# create the comparison cloud
+
+set.seed(10) # set seed for reproducibility
+
+comparison.cloud(tdm, random.order=FALSE, 
+                 colors = c("#9E31CC", "#BD1550", "#5E8C6A", "#3299BB"), 
+                 title.size=2,
+                 title.colors = c("#9E31CC", "#BD1550", "#5E8C6A", "#3299BB"),
+                 title.bg.colors = c("#DEC8E8", "#EDC5D3", "#CCD9CF", "#C6E9F5"),
+                 max.words=90)
+
+#45ADA8
+
+## COMMONALITY WORD CLOUD
+
+# create a new term document matrix without positive
+tdm_common <- nrc_tweets_cloud %>%
+  # need to take unigrams in word out to create the matrix
+  select(-word, -positive) %>%
+  as.matrix() 
+
+# add the unigrams in word back in once matrix is created
+rownames(tdm_common) <- nrc_tweets_cloud$word
+
+# create the commonality cloud
+
+set.seed(2) # set seed for reproducibility
+
+commonality.cloud(tdm_common, random.order = FALSE, 
+                  scale = c(5, .5), 
+                  colors = c("#9E31CC", "#BD1550", "#5E8C6A", "#3299BB"), 
+                  max.words = 200)
+
+```
+
+
