@@ -1,5 +1,5 @@
 ---
-title: "Your Project Title Here"
+title: "Theory of Mind"
 author: "Your Names Here"
 date: "Add a date"
 output:
