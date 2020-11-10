@@ -1,0 +1,122 @@
+---
+title: "Lauren_Text_Analysis"
+author: "Lauren Simpson"
+date: "11/2/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# Load packages here
+library(tidyverse)
+library(tidytext)
+library(wordcloud)
+library(textdata)
+library(tm)
+library(xtable)
+
+knitr::opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+```{r}
+## GENERAL WORD CLOUD
+
+# read in data for general word cloud
+covid_words <- read_csv("/Users/lauren/Documents/git/Blog-Theory-of-Mind/text analysis/covid_words.csv")
+
+pal <- brewer.pal(8, "Dark2") # define color palette for word cloud
+
+set.seed(2) # set seed for reproducibility
+
+# create word cloud
+covid_words %>%
+  with(wordcloud(words = word, freq = n,
+                 max.words = 50, random.order = F,
+                 colors = pal,
+                 scale = c(3, 1), rot.per = 0.2,
+                 family = "sans"))
+
+```
+
+
+```{r}
+## SENTIMENT ANALYSIS
+
+# read in data for general sentiment analysis
+nrc_tweets_sent <- read_csv("/Users/lauren/Documents/git/Blog-Theory-of-Mind/text analysis/nrc_tweets_sent.csv")
+
+# plotting number of words by all sentiments in the tweets
+nrc_tweets_sent %>%
+  ggplot(aes(x = reorder(sentiment,n), y = n, color = sentiment, fill = sentiment)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  labs(x = "Sentiments",
+       y = "Number of Words",
+       title="Number of Words by Sentiment in Covid-19 Tweets") +
+  guides(color = "none", fill = "none")
+
+# read in data for anxiety and depression related sentiment analysis
+nrc_tweets_words <- read_csv("/Users/lauren/Documents/git/Blog-Theory-of-Mind/text analysis/nrc_tweets_words.csv")
+
+# plotting words by anxiety and depression relevant sentiments
+ggplot(data = nrc_tweets_words, aes(x = reorder(word, n),
+                                    y = n,
+                                    fill = as.factor(n))) +
+  geom_col(show.legend = FALSE) +
+  labs(x = "Words", y = "Number of Words",
+       title="The top 10 most common words by relevant sentiments") +
+  facet_wrap(~sentiment_label, ncol = 2, scales = "free") +
+  coord_flip()
+
+```
+```{r}
+## COMPARISON WORD CLOUD
+
+# read in data to create term document matrix for comparison and commonality clouds
+nrc_tweets_cloud <- read_csv("/Users/lauren/Documents/git/Blog-Theory-of-Mind/text analysis/nrc_tweets_cloud.csv")
+
+# create a term document matrix for the comparison.cloud function
+tdm <- nrc_tweets_cloud %>%
+  # need to take unigrams in word out to create the matrix
+  select(-word) %>%
+  as.matrix() 
+
+# add the unigrams in word back in once matrix is created
+rownames(tdm) <- nrc_tweets_cloud$word
+
+# create the comparison cloud
+
+set.seed(10) # set seed for reproducibility
+
+comparison.cloud(tdm, random.order=FALSE, 
+                 colors = c("#9E31CC", "#BD1550", "#5E8C6A", "#3299BB"), 
+                 title.size=2,
+                 title.colors = c("#9E31CC", "#BD1550", "#5E8C6A", "#3299BB"),
+                 title.bg.colors = c("#DEC8E8", "#EDC5D3", "#CCD9CF", "#C6E9F5"),
+                 max.words=90)
+```
+```{r}
+## COMMONALITY WORD CLOUD
+
+# create a new term document matrix without positive
+tdm_common <- nrc_tweets_cloud %>%
+  # need to take unigrams in word out to create the matrix
+  select(-word, -positive) %>%
+  as.matrix() 
+
+# add the unigrams in word back in once matrix is created
+rownames(tdm_common) <- nrc_tweets_cloud$word
+
+# create the commonality cloud
+
+set.seed(2) # set seed for reproducibility
+
+commonality.cloud(tdm_common, random.order = FALSE, 
+                  scale = c(5, .5), 
+                  colors = c("#9E31CC", "#BD1550", "#5E8C6A", "#3299BB"), 
+                  max.words = 200)
+```
+
+
