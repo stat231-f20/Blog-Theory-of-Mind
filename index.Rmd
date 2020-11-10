@@ -33,8 +33,8 @@ You should test out updating your GitHub Pages website:
 
 You can embed code as normal, for example:
 
-```{r cars}
-summary(cars)
+```{r cars, echo=FALSE}
+mosaic::favstats(~speed, data = cars)
 ```
 
 Let's clean up the format of that output:
