@@ -11,6 +11,11 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.align="center")
 library(tidyverse)
+library(tidytext)
+library(wordcloud)
+library(textdata)
+library(tm)
+library(xtable)
 ```
 
 # Introduction
@@ -21,7 +26,7 @@ This blog post looks at different aspects of mental health during the 2020 Covid
 
 Dataset 1: CDC Anxiety/Depression Surveys
 
-- Link: https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm
+- Link: [Links](https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm)
 - We use data from the household “pulse polls” that were created by the CDC and the U.S. Census Bureau in the early stages of the pandemic in the US, starting on April 23. We focused on the “Anxiety and Depression” survey, which asked four questions about the frequency of depressive/anxious emotions in the past seven days.
 - The data was broken down into different categories, including race, gender, age group, and education level. By examining the quantitative values associated with anxiety and depression from the survey, we can explore the ways that depressive/anxious symptoms change across different demographic groups.
 - On their website, the CDC notes that this survey uses data collected in a somewhat unconventional manner, given the short duration between data collection and data analysis. Examples of limitations in this survey are inaccurate responses, inability to cover certain households based on contact information, people who were unwilling to respond, and processing errors.
@@ -30,21 +35,37 @@ Dataset 1: CDC Anxiety/Depression Surveys
 
 Dataset 2: Covid-19 Tweets
 
-- Link: https://www.kaggle.com/gpreda/covid19-tweets
+- Link: [Links](https://www.kaggle.com/gpreda/covid19-tweets)
 - Description: This is a dataset from kaggle called “COVID19 Tweets” that came in the format of a .csv file. It contains all tweets from 07/24/20 through 08/30/20 that used the hashtag #covid19. They were pulled using Twitter API and a Python script. The dataset contains the following information: user name, location, other variables about the user (i.e., their description, number of followers, favorites, etc.), date of the tweet, full text tweet, hashtags, source, and whether or not it is a retweet.
 
-### Header 3
 
+# Results
 
-## Including code and plots
+*Embed Shiny link*
 
-You can embed code as normal, for example:
-
-```{r cars, echo=FALSE}
-mosaic::favstats(~speed, data = cars)
-```
 
 Let's clean up the format of that output:
+
+{r pretty, echo=FALSE, warning=FALSE, message=FALSE}
+
+```{r}
+## GENERAL WORD CLOUD
+
+# read in data for general word cloud
+covid_words <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/text analysis/covid_words.csv")
+
+pal <- brewer.pal(8, "Dark2") # define color palette for word cloud
+
+set.seed(2) # set seed for reproducibility
+
+# create word cloud
+covid_words %>%
+  with(wordcloud(words = word, freq = n,
+                 max.words = 50, random.order = F,
+                 colors = pal,
+                 scale = c(3, 1), rot.per = 0.2,
+                 family = "sans"))
+```
 
 ```{r pretty, echo=FALSE, warning=FALSE, message=FALSE}
 library(kableExtra)
