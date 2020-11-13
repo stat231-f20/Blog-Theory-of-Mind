@@ -5,16 +5,16 @@ library(tidyverse)
 library(dplyr)
 library(stringr)
 library(magrittr)
-library(tidyverse)
 library(ggrepel)
 library(mdsr)
 
-# get datasets
-allgroups <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/allgroups.csv")
+ # get datasets
+ allgroups <- read_csv("allgroups.csv")
 
 #create subsets of the data based on groupings and run kmeans clustering on each grouping
 age <- allgroups %>%
   filter(Group == "By Age") %>%
+#removing "years" from the age group categories
   separate(Subgroup, into = c("Subgroup", "remove"), sep = " years", convert = TRUE) %>%
   select(-remove) %>%
   mutate(Subgroup = ifelse(Subgroup == "80", "80+", Subgroup))
