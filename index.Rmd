@@ -41,8 +41,7 @@ Dataset 2: Covid-19 Tweets
 
 # Results
 
-*Embed Shiny link*
-
+[Shiny App for K-Means Clustering](https://avatillman.shinyapps.io/kmeans_app/)
 
 Let's clean up the format of that output:
 
