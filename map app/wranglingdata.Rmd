@@ -18,7 +18,7 @@ library(mdsr)
 library(Hmisc)
 library(stringr)
 
-path_in <- "C:/Users/karen/Desktop/git/stat-231-private/data/blog data/"
+path_in <- "C:/Users/karen/Desktop/git/Blog-Theory-of-Mind/map app/blog data/"
 ```
 
 
@@ -50,8 +50,8 @@ covid_counties <- covid_counties %>%
   filter(state != "Puerto Rico", state != "Virgin Islands", state != "Guam", state != "Northern Mariana Islands") %>%
   # mutate(data = as.character(date)) %>%
   filter(str_detect(date, "-04-") | str_detect(date, "-05-") | str_detect(date, "-06-") |
-           str_detect(date, "-07-") | str_detect(date, "-08-"))
-covid_counties <- covid_counties %>%
+           str_detect(date, "-07-") | str_detect(date, "-08-"))   # this line takes a while to run
+covid_counties <- covid_counties %>%                              # so does this one
   mutate(month = case_when(str_detect(date, "-04-") ~ "April",
                            str_detect(date, "-05-") ~ "May",
                            str_detect(date, "-06-") ~ "June",
@@ -143,7 +143,7 @@ actions <- actions %>%
   mutate(stress = curfew + masks + income) %>%
   select(state, stress)
 
-
+unique(actions$Statewide_Mask_Policy)
 
 # CDC social vulnerability index
 sviIndex <- read_csv(paste0(path_in, "SVI2018_US_COUNTY.csv"))
@@ -205,13 +205,13 @@ svi_map <- full_join(svi, map_counties, by = c("state", "county")) %>%
 
 
 ```{r}
-path_in2 <- "C:/Users/karen/Desktop/git/stat-231-private/blogproject/"
-write_csv(ad_map, paste0(path_in2, "ad.csv"))
-write_csv(sm, paste0(path_in2, "sm.csv"))
-write_csv(actions_map, paste0(path_in2, "act.csv"))
-write_csv(svi_map, paste0(path_in2, "svi.csv"))
-write_csv(cities_counties, paste0(path_in2, "cities_counties.csv"))
-write_csv(covid_cities, paste0(path_in2, "covid_cities.csv"))
+# path_in2 <- "C:/Users/karen/Desktop/git/stat-231-private/blogproject/"
+# write_csv(ad_map, paste0(path_in2, "ad.csv"))
+# write_csv(sm, paste0(path_in2, "sm.csv"))
+# write_csv(actions_map, paste0(path_in2, "act.csv"))
+# write_csv(svi_map, paste0(path_in2, "svi.csv"))
+# write_csv(cities_counties, paste0(path_in2, "cities_counties.csv"))
+# write_csv(covid_cities, paste0(path_in2, "covid_cities.csv"))
 ```
 
 

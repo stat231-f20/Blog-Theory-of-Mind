@@ -16,27 +16,70 @@ library(wordcloud)
 library(textdata)
 library(tm)
 library(xtable)
+library(shiny)
 ```
+
+```{r, echo = F}
+path_ava <- '/Users/avatillman/git/Blog-Theory-of-Mind/'
+path_karen <- "C:/Users/karen/Desktop/git/Blog-Theory-of-Mind/"
+```
+
 
 # Introduction
 
-This blog post looks at different aspects of mental health during the 2020 Covid-19 pandemic. The pandemic has been and continues to be a great source of anxiety, depression, and general negative feelings for individuals, given the need for quarantine, social distancing, and a general departure from normal, everyday life pre-pandemic. It is important to examine the impact of the pandemic on mental health and explore anxiety and depression in the U.S. during this time in different ways--this will help us understand and respond to the pandemic as a country. Our main takeaway from our Shiny App project was the strong correlation between anxiety and depression, so we wanted to examine that further in our blog post. In this blog post, we examine symptom severity of anxiety and depression in different demographic groups, most common sentiments and words used in tweets about Covid 19, and [KAREN]. 
+This blog post looks at different aspects of mental and social health during the 2020 Covid-19 pandemic across the United States. The pandemic has been, and continues to be, a great source of anxiety, depression, and other regressive emotions for individuals due to but not limited to the need for quarantine, social distancing, and a cruel but necessary departure from normal, pre-pandemic life. It is important to examine how the pandemic has impacted mental and social health, in different ways — this will help us understand and respond to the pandemic as a country. Our main takeaway from our Shiny App project was the strong correlation between anxiety and depression and that these two factors are not necessarily correlated with reduced access to healthcare; so, we wanted to examine the anxiety and depression angle further in this blog post. In this post, we examine symptom severity of anxiety and depression in different demographic groups; most common sentiments and words used in tweets about Covid-19; and the spatial patterns of anxiety and depression, social media presence of Covid-19 across counties, stress related to state-mandated shutdowns, and social vulnerability, across the contiguous United States.
 
 ## Data
 
-Dataset 1: CDC Anxiety/Depression Surveys
+**Dataset 1: CDC Anxiety/Depression Surveys**
 
-- Link: [Links](https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm)
-- We use data from the household “pulse polls” that were created by the CDC and the U.S. Census Bureau in the early stages of the pandemic in the US, starting on April 23. We focused on the “Anxiety and Depression” survey, which asked four questions about the frequency of depressive/anxious emotions in the past seven days.
+- **Link:** [Links](https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm)
+- **Description:** We used data from the household “pulse polls” that were created by the CDC and the U.S. Census Bureau in the early stages of the pandemic in the US, starting on April 23 and continues to the present. We focused on the “Anxiety and Depression” survey, which asked four questions about the frequency of depressive/anxious emotions in the past seven days.
 - The data was broken down into different categories, including race, gender, age group, and education level. By examining the quantitative values associated with anxiety and depression from the survey, we can explore the ways that depressive/anxious symptoms change across different demographic groups.
 - On their website, the CDC notes that this survey uses data collected in a somewhat unconventional manner, given the short duration between data collection and data analysis. Examples of limitations in this survey are inaccurate responses, inability to cover certain households based on contact information, people who were unwilling to respond, and processing errors.
 - Despite these limitations, this data is still extremely valuable in providing firsthand accounts of what living through this Pandemic is like. We can get a picture of these past few months because of the instantaneous technology. The benefits of this are even greater for the CDC, U.S. Census Bureau, and any other organizations that need this data to quickly adapt to the challenges proposed by this pandemic.
 
 
-Dataset 2: Covid-19 Tweets
+**Dataset 2: Covid-19 Tweets**
 
-- Link: [Links](https://www.kaggle.com/gpreda/covid19-tweets)
-- Description: This is a dataset from kaggle called “COVID19 Tweets” that came in the format of a .csv file. It contains all tweets from 07/24/20 through 08/30/20 that used the hashtag #covid19. They were pulled using Twitter API and a Python script. The dataset contains the following information: user name, location, other variables about the user (i.e., their description, number of followers, favorites, etc.), date of the tweet, full text tweet, hashtags, source, and whether or not it is a retweet.
+- **Link:** [Links](https://www.kaggle.com/gpreda/covid19-tweets)
+- **Description:** This is a dataset from kaggle called “COVID19 Tweets” that came in the format of a .csv file. It contains all tweets from 07/24/20 through 08/30/20 that used the hashtag #covid19. They were pulled using Twitter API and a Python script. The dataset contains the following information: user name, location, other variables about the user (i.e., their description, number of followers, favorites, etc.), date of the tweet, full text tweet, hashtags, source, and whether or not it is a retweet.
+
+
+**Dataset 3:** ***The New York Times*** **Covid-19 Data**
+
+- **Link:** [Links](https://github.com/nytimes/covid-19-data)
+- **Description:** This dataset was retrieved from *The New York Times* GitHub where they've made publicly available Covid-19 data that they have collected since January 2020. It contains information per week for how many current and probable cases and deaths there are in each county. We use only the information for confirmed current cases and have changed the time progression to monthly.
+
+
+**Dataset 4: CDC 2018 Social Vulnerability Index**
+
+- **Link:** [Links](https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html)
+- **Description:** The CDC has collected data through census tracts in 2000, 2010, 2014, 2016, and 2018 to investigate the social vulnerability of communities in the U.S. Natural disasters and infectious disease outbreaks, particularly Covid-19, pose threats to community health. Due to factors like socioeconomic status, household composition, minority identity, housing type, transportation limits, and disability, certain communities are even more socially vulnerable than others and at particularly high risk to these disasters.
+- We've included this dataset in order to have a spatial view of how social vulnerability correlates with mental health factors and Covid-19 infection. The data has all the aforementioned variables on scales decided by the CDC; we use the cumulative value that assigns an overall score of vulnerability to every individual county in the contiguous United States. This data is temporally static, as it is a snapshot of community vulnerability at the time the last batch of census data was released in 2018.
+
+
+**Dataset 5: Social Media Counts During Covid-19**
+
+- **Link:** [Links](https://coronavirus-resources.esri.com/datasets/feb6280d42de4e91b47cf37344a91eae_0?page=4&showData=true)
+- **Description:** This dataset includes counts of social media posts that mention COVID-19 for each included county, though the Midwest suffers from a paucity of data as time progresses. This data is provided per week starting in January, 2020, and is updated through August, but we only use the data starting in April due to the time constraints of our other datasets, particularly the CDC anxiety and depression data.
+- We've included this dataset because social media in our modern era is inextricably entwined with mental health and self-expression. The dataset includes county locations, total posts per week, unique users per week, and sentiment analysis values. For our analysis we only use county locations and total posts per week, which we've changed into months.
+- It was necessary to have both this dataset and Dataset 2 because Dataset 2 does not include pre-analyzed sentiment values while this one does, and we wanted to perform our own sentiment analysis with Dataset 2. This dataset was necessary because we needed geographic indicators (county-level, specifically) in order to create our spatial visualizations.
+
+
+**Dataset 5: State Actions and Mandates in Response to Covid-19**
+
+- **Link:** [Links](https://coronavirus-resources.esri.com/datasets/NGA2::covid19-state-and-territory-actions-download?showData=true)
+- **Description:** This dataset compiles information on how each state initially reacted to the pandemic around the month of March, 2020. The variables include written descriptions of what each state did in regard to curfew, masks, wage changes, non-essential business closures, limits on gathering, emergency declarations, travel restrictions, school closures, and more.
+- To turn this dataset into something quantifiable for the spatial mapping, we focused in on three variables — mask policy, curfew, and wage changes because we felt that these were generally the most representative for all the other variables in the dataset. Each variable was converted to a scale of 1 to 4 based on the policy. For example, for mask policy, the levels were "Recommendation", "Mandatory (for essential business employees)", "Mandatory (for essential business employees and patrons while on premises)", and "Mandatory". These were assigned values of 1, 2, 3, and 4, respectively, based on their perceived causative power for stress. In the end, a scale of 1-12 indicated the relative "stress" imposed by the state government onto the citizens on the basis of the pandemic.
+- Note that our stress scale does not necessarily correlate with a "good" or "bad" government, and even less so political affiliation. Even though there are certainly political factors that can lead to certain governments making "bad" decisions for public health, population is also an important factor that affects a state's policies. Even more importantly, in this pandemic certain "bad" decisions are the more relaxing ones while other "bad" decisions are more stressful. Take for example curfew; enforced curfew was assigned a 4 for stress but is considered a "good" government decision, while "no wage extension" was also assigned a 4 for stress but is considered a "bad" government decision.
+
+**Other Datasets**
+These other datasets were used for the spatial visualizations, which required extra geographic information.
+
+1. Cities and counties. Link: [Links](https://simplemaps.com/data/us-cities)
+2. County-level and state-level data from the `maps` package
+
 
 
 # Results
@@ -51,7 +94,7 @@ Let's clean up the format of that output:
 ## GENERAL WORD CLOUD
 
 # read in data for general word cloud
-covid_words <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/text analysis/covid_words.csv")
+covid_words <- read_csv(paste0(path_karen, "text analysis/covid_words.csv"))
 
 pal <- brewer.pal(8, "Dark2") # define color palette for word cloud
 
@@ -90,6 +133,10 @@ ggplot(data = cars, aes(x = speed, y = dist)) +
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r, echo = FALSE}
+# knitr::include_app('https://klingliu.shinyapps.io/blogproject/', height = '1000px')
+```
 
 
 ## Including links and images
