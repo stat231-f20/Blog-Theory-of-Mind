@@ -65,7 +65,11 @@ Dataset 2: Covid-19 Tweets
 # {.tabset .tabset-fade .tabset-pills}
 
 ## Trends
+<!-- You can make a bulleted list like this: -->
 
+<!-- - item 1 -->
+<!-- - item 2 -->
+<!-- - item 3 -->
 Conclusions: Confirmation of the strong positive linear relationship between anxiety and depression
 Clusters demonstrate that patterns in anxiety and depression are largely influenced by demographic group
 Specifically, 
@@ -92,11 +96,7 @@ Population: this data is specifically for people in the US and those who chose t
 
 ## Sentiment Analysis
 
-<!-- You can make a bulleted list like this: -->
-
-<!-- - item 1 -->
-<!-- - item 2 -->
-<!-- - item 3 -->
+We conducted a sentiment analysis on full text tweets from July 24 to August 30 2020 that used the #covid19. We separated the tweets into unigrams and performed a sentiment analysis, using sentiments from the nrc lexicon. We found that the most common sentiment in the tweets was Negative, followed by Positive, Fear, Trust, Anger, Sadness, Disgust, Anticipation, Joy, and the least common sentiment was surprise. After the general sentiment analysis, we examined the top 10 most common words that belonged to sentiments related to anxiety and depression, specifically Positive, Negative, Fear, and Sadness. Interestingly, quite a few of the top 10 words overlap for Negative, Fear, and Sadness, such as: pandemic, death, hospital, etc. Overall, exploring the most common anxiety and depression related words individuals used in tweets about covid 19 helps us to gain a new perspective on how individuals were feeling during this time. 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 ## SENTIMENT ANALYSIS
@@ -132,11 +132,8 @@ ggplot(data = nrc_tweets_words, aes(x = reorder(word, n),
 
 ## Comparison World Cloud
 
-<!-- You can make a numbered list like this -->
+Since we noticed some overlap in the top 10 most common words for anxiety and depression related sentiments, we decided to create a comparison word cloud to visually depict words by these 4 sentiments. Of note, comparison clouds are similar to typical word clouds, but they allow you to visualize the most frequent words across different categories. Additionally, the code for comparison clouds requires the data to be formatted into a term document matrix (tdm), as demonstrated above. The words are colored by the sentiment they primarily belong to, and the size of the words indicates how frequently they were used. We found that pandemic was the most common Sadness word, government and risk were among the most common Fear words, virus was the most common Negative word, and vaccine was the most common Positive word.
 
-<!-- 1. First thing I want to say -->
-<!-- 2. Second thing I want to say -->
-<!-- 3. Third thing I want to say -->
 ```{r, warning = FALSE, message=FALSE}
 ## COMPARISON WORD CLOUD
 
@@ -164,7 +161,11 @@ comparison.cloud(tdm, random.order=FALSE,
                  max.words=90)
 ```
 
+
 ## Commonality World Cloud
+
+A commonality cloud is a type of word cloud that allows you to visualize the most common words across different categories. Similar to the comparison cloud, a term document matrix is needed. We only compared words across the fear, negative, and sadness sentiments, as positive did not have enough words in common with the other three to produce a meaningful cloud. Based on the cloud produced, we can see that pandemic is by far the most commonly used word across the fear, negative, and sadness sentiments. Death is the second most common. The rest of the words in purple indicate other words that are common and shared by all three sentiment categories. The large amount of purple words demonstrates that there are numerous words in the covid 19 tweets that span the sentiment categories of fear, negative, and sadness. 
+
 ```{r}
 ## COMMONALITY WORD CLOUD
 
@@ -195,4 +196,9 @@ commonality.cloud(tdm_common, random.order = FALSE,
 
 # Conclusion
 
+Overall, the results from the text and sentiment analyses demonstrate that individuals have been expressing high numbers of words associated with sadness, fear, and general negativity in their tweets about covid19. These findings are in line with the high levels of anxiety and depression during the pandemic that we observed in the CDC Anxiety and Depression dataset. Additionally, we were able to examine specific words that belonged to each of these sentiments individually, as well as words and themes that spanned across sentiments, most notably, “pandemic.” These findings make a lot of sense, as we know from our own personal experiences that the pandemic has been a great source of sadness, fear, and negative emotions. 
+
+Limitations of this text and sentiment analysis include the fact that the data was only collected over a short period of time, from July 24 to August 30, 2020, and the dataset only contained tweets using the hashtag #covid19. This month-long timeframe is a small snapshot of tweets during the pandemic, so the tweets analyzed in this text analysis may not be representative of tweets, sentiments, or most common words utilized during the pandemic as a whole, as they may only be specific to this time period. Additionally, there were likely many other tweets individuals posted about the coronavirus or pandemic without using #covid19, which were not included in our analysis. Thus, our findings may not be generalizable to all tweets about the coronavirus, but rather only tweets in which individuals use #covid19. 
+
+Our text analyses could be improved by examining tweets about the pandemic over a longer period of time, for example, a few months, rather than just one. Additionally, we could broaden the scope of hashtags used and examine tweets with other hashtags related to the coronavirus, rather than relying on one, #covid19. Furthermore, in future work it would be interesting to conduct text and sentiment analyses not only on coronavirus related tweets, but also text such as news stories, academic research articles, or even posts from other social media sites to get a more comprehensive view of how individuals are using words to express certain sentiments during this time.
 
