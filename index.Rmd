@@ -22,32 +22,7 @@ library(xtable)
 
 This blog post looks at different aspects of mental health during the 2020 Covid-19 pandemic. The pandemic has been and continues to be a great source of anxiety, depression, and general negative feelings for individuals, given the need for quarantine, social distancing, and a general departure from normal, everyday life pre-pandemic. It is important to examine the impact of the pandemic on mental health and explore anxiety and depression in the U.S. during this time in different ways--this will help us understand and respond to the pandemic as a country. Our main takeaway from our Shiny App project was the strong correlation between anxiety and depression, so we wanted to examine that further in our blog post. In this blog post, we examine symptom severity of anxiety and depression in different demographic groups, most common sentiments and words used in tweets about Covid 19, and [KAREN]. 
 
-## Data
-
-Dataset 1: CDC Anxiety/Depression Surveys
-
-- Link: [Links](https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm)
-- We use data from the household “pulse polls” that were created by the CDC and the U.S. Census Bureau in the early stages of the pandemic in the US, starting on April 23. We focused on the “Anxiety and Depression” survey, which asked four questions about the frequency of depressive/anxious emotions in the past seven days.
-- The data was broken down into different categories, including race, gender, age group, and education level. By examining the quantitative values associated with anxiety and depression from the survey, we can explore the ways that depressive/anxious symptoms change across different demographic groups.
-- On their website, the CDC notes that this survey uses data collected in a somewhat unconventional manner, given the short duration between data collection and data analysis. Examples of limitations in this survey are inaccurate responses, inability to cover certain households based on contact information, people who were unwilling to respond, and processing errors.
-- Despite these limitations, this data is still extremely valuable in providing firsthand accounts of what living through this Pandemic is like. We can get a picture of these past few months because of the instantaneous technology. The benefits of this are even greater for the CDC, U.S. Census Bureau, and any other organizations that need this data to quickly adapt to the challenges proposed by this pandemic.
-
-
-Dataset 2: Covid-19 Tweets
-
-- Link: [Links](https://www.kaggle.com/gpreda/covid19-tweets)
-- Description: This is a dataset from kaggle called “COVID19 Tweets” that came in the format of a .csv file. It contains all tweets from 07/24/20 through 08/30/20 that used the hashtag #covid19. They were pulled using Twitter API and a Python script. The dataset contains the following information: user name, location, other variables about the user (i.e., their description, number of followers, favorites, etc.), date of the tweet, full text tweet, hashtags, source, and whether or not it is a retweet.
-
-
-# Results
-
-[Shiny App for K-Means Clustering](https://avatillman.shinyapps.io/kmeans_app/)
-
-Let's clean up the format of that output:
-
-{r pretty, echo=FALSE, warning=FALSE, message=FALSE}
-
-```{r}
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
 ## GENERAL WORD CLOUD
 
 # read in data for general word cloud
@@ -66,53 +41,158 @@ covid_words %>%
                  family = "sans"))
 ```
 
-```{r pretty, echo=FALSE, warning=FALSE, message=FALSE}
-library(kableExtra)
-summary(cars) %>%
-  kable(col.names = c("Speed", "Distance")
-        , row.names = F) %>%
-  kable_styling(bootstrap_options = "striped"
-                , full_width = F) %>%
-  row_spec(0, bold = T, underline = T) %>%
-  column_spec(1:2, width = "1.5in") 
+## Data
+
+Dataset 1: CDC Anxiety/Depression Surveys
+
+- Link: [Link to the Dataset](https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm)
+- We use data from the household “pulse polls” that were created by the CDC and the U.S. Census Bureau in the early stages of the pandemic in the US, starting on April 23. We focused on the “Anxiety and Depression” survey, which asked four questions about the frequency of depressive/anxious emotions in the past seven days.
+- The data was broken down into different categories, including race, gender, age group, and education level. By examining the quantitative values associated with anxiety and depression from the survey, we can explore the ways that depressive/anxious symptoms change across different demographic groups.
+- On their website, the CDC notes that this survey uses data collected in a somewhat unconventional manner, given the short duration between data collection and data analysis.
+
+
+Dataset 2: Covid-19 Tweets
+
+- Link: [Link to the dataset](https://www.kaggle.com/gpreda/covid19-tweets)
+- Description: This is a dataset from kaggle called “COVID19 Tweets” that came in the format of a .csv file. It contains all tweets from 07/24/20 through 08/30/20 that used the hashtag #covid19. They were pulled using Twitter API and a Python script. The dataset contains the following information: user name, location, other variables about the user (i.e., their description, number of followers, favorites, etc.), date of the tweet, full text tweet, hashtags, source, and whether or not it is a retweet.
+
+
+# Results
+
+## Clustering of Anxiety Depression rates by Demographic Group
+[Click here to Explore these Patterns!](https://avatillman.shinyapps.io/kmeans_app/)
+
+# {.tabset .tabset-fade .tabset-pills}
+
+## Trends
+
+Conclusions: Confirmation of the strong positive linear relationship between anxiety and depression
+Clusters demonstrate that patterns in anxiety and depression are largely influenced by demographic group
+Specifically, 
+- Teens and young adults have the highest levels of anxiety and depression, while elderly people tend to have the lowest levels
+- For non-hispanic groups, Asians have the lowest levels, then white, then black, and hispanic and other races tend to have the highest values of anxiety and depression
+- Females tend to have higher levels than males
+Most stressed/anxious: less than a high school diploma, lowest is bachelor’s degree or higher
+
+## Impact
+
+Are certain groups (teens, hispanics/”other races”, females, and people with less than a high school diploma) responding worse to the Pandemic? Are these the people who it may be disproportionately affecting? Should we try to focus resources and accessibility to resources on these groups?
+
+## Limitations
+
+Limitations: Only have data for anxiety and depression during the pandemic
+Hard to compare to normal circumstances: are certain groups experiencing higher levels of anxiety and depression than they normally would? We can’t really tell
+Strengthen our research by increasing the scope (expand geographically and temporally) of the data on anxiety/depression levels
+Population: this data is specifically for people in the US and those who chose to take the survey, but it could be extended to a global project to see if different demographic groups in other countries have similar sentiments
+
+# {-}
+
+## Text Analysis for Covid Tweets
+# {.tabset .tabset-fade .tabset-pills}
+
+## Sentiment Analysis
+
+<!-- You can make a bulleted list like this: -->
+
+<!-- - item 1 -->
+<!-- - item 2 -->
+<!-- - item 3 -->
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+## SENTIMENT ANALYSIS
+
+# read in data for general sentiment analysis
+nrc_tweets_sent <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/text analysis/nrc_tweets_sent.csv")
+
+# plotting number of words by all sentiments in the tweets
+nrc_tweets_sent %>%
+  ggplot(aes(x = reorder(sentiment,n), y = n, color = sentiment, fill = sentiment)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  labs(x = "Sentiments",
+       y = "Number of Words",
+       title="Number of Words by Sentiment in Covid-19 Tweets") +
+  guides(color = "none", fill = "none")
+
+# read in data for anxiety and depression related sentiment analysis
+nrc_tweets_words <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/text analysis/nrc_tweets_words.csv")
+
+# plotting words by anxiety and depression relevant sentiments
+ggplot(data = nrc_tweets_words, aes(x = reorder(word, n),
+                                    y = n,
+                                    fill = as.factor(n))) +
+  geom_col(show.legend = FALSE) +
+  labs(x = "Words", y = "Number of Words",
+       title="The top 10 most common words by relevant sentiments") +
+  facet_wrap(~sentiment_label, ncol = 2, scales = "free") +
+  coord_flip()
+
 ```
 
-In a study from the 1920s, fifty cars were used to see how the speed of the car and the distance taken to stop were related.  Speeds ranged between `r min(cars$speed)` and `r max(cars$speed)` mph.  Distances taken to stop ranged between `r min(cars$dist)` and `r max(cars$dist)` feet, with the middle 50% falling between `r as.numeric(quantile(cars$dist)[2])` and `r as.numeric(quantile(cars$dist)[4])` feet.  
+## Comparison World Cloud
 
-You can also embed plots as normal, for example:
+<!-- You can make a numbered list like this -->
 
-```{r figure1, echo=FALSE}
-ggplot(data = cars, aes(x = speed, y = dist)) + 
-  geom_point() + 
-  labs(x = "Speed of car (mph)"
-       , y = "Distance taken to stop (ft)"
-       , title = "cars data (1920s)")
+<!-- 1. First thing I want to say -->
+<!-- 2. Second thing I want to say -->
+<!-- 3. Third thing I want to say -->
+```{r, warning = FALSE, message=FALSE}
+## COMPARISON WORD CLOUD
+
+# read in data to create term document matrix for comparison and commonality clouds
+nrc_tweets_cloud <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/text analysis/nrc_tweets_cloud.csv")
+
+# create a term document matrix for the comparison.cloud function
+tdm <- nrc_tweets_cloud %>%
+  # need to take unigrams in word out to create the matrix
+  select(-word) %>%
+  as.matrix() 
+
+# add the unigrams in word back in once matrix is created
+rownames(tdm) <- nrc_tweets_cloud$word
+
+# create the comparison cloud
+
+set.seed(10) # set seed for reproducibility
+
+comparison.cloud(tdm, random.order=FALSE, 
+                 colors = c("#9E31CC", "#BD1550", "#5E8C6A", "#3299BB"), 
+                 title.size=2,
+                 title.colors = c("#9E31CC", "#BD1550", "#5E8C6A", "#3299BB"),
+                 title.bg.colors = c("#DEC8E8", "#EDC5D3", "#CCD9CF", "#C6E9F5"),
+                 max.words=90)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Commonality World Cloud
+```{r}
+## COMMONALITY WORD CLOUD
+
+# create a new term document matrix without positive
+tdm_common <- nrc_tweets_cloud %>%
+  # need to take unigrams in word out to create the matrix
+  select(-word, -positive) %>%
+  as.matrix() 
+
+# add the unigrams in word back in once matrix is created
+rownames(tdm_common) <- nrc_tweets_cloud$word
+
+# create the commonality cloud
+
+set.seed(2) # set seed for reproducibility
+
+commonality.cloud(tdm_common, random.order = FALSE, 
+                  scale = c(5, .5), 
+                  colors = c("#9E31CC", "#BD1550", "#5E8C6A", "#3299BB"), 
+                  max.words = 200)
+```
 
 
-## Including links and images
+# {-}
 
-You can include [Links](https://www.datadreaming.org/post/r-markdown-theme-gallery/) and images ![team logo](https://raw.githubusercontent.com/stat231-f20/Blog-Theory-of-Mind/main/images/psych1-6.png)
-
-
-# You can even create tabs if you want! {.tabset .tabset-fade .tabset-pills}
-
-## Bulleted list
-
-You can make a bulleted list like this:
-
-- item 1
-- item 2
-- item 3
+## Spatial Data
 
 
-## Numbered list
+# Conclusion
 
-You can make a numbered list like this
-
-1. First thing I want to say
-2. Second thing I want to say
-3. Third thing I want to say
 
