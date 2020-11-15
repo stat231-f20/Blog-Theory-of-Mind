@@ -6,6 +6,7 @@ output:
   rmdformats::readthedown:
     thumbnails: false
     highlight: NULL
+runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
@@ -31,9 +32,27 @@ This blog post looks at different aspects of mental and social health during the
 
 ## Data
 
+```{r, echo = FALSE}
+d1 <- "https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm"
+
+d2 <- "https://www.kaggle.com/gpreda/covid19-tweets"
+
+datainfosets <- c(d1, d2)
+radioButtons("link",
+            label = "Choose a dataset to learn more about:",
+            choiceValues = datainfosets,
+            choiceNames = c("CDC Anxiety/Depression Surveys", "Covid-19 Tweets"))
+
+renderUI({
+  input$link
+})
+
+```
+
+
 **Dataset 1: CDC Anxiety/Depression Surveys**
 
-- **Link:** [Links](https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm)
+- **Link:** (https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm)
 - **Description:** We used data from the household “pulse polls” that were created by the CDC and the U.S. Census Bureau in the early stages of the pandemic in the US, starting on April 23 and continues to the present. We focused on the “Anxiety and Depression” survey, which asked four questions about the frequency of depressive/anxious emotions in the past seven days.
 - The data was broken down into different categories, including race, gender, age group, and education level. By examining the quantitative values associated with anxiety and depression from the survey, we can explore the ways that depressive/anxious symptoms change across different demographic groups.
 - On their website, the CDC notes that this survey uses data collected in a somewhat unconventional manner, given the short duration between data collection and data analysis. Examples of limitations in this survey are inaccurate responses, inability to cover certain households based on contact information, people who were unwilling to respond, and processing errors.
@@ -62,7 +81,7 @@ This blog post looks at different aspects of mental and social health during the
 **Dataset 5: Social Media Counts During Covid-19**
 
 - **Link:** [Links](https://coronavirus-resources.esri.com/datasets/feb6280d42de4e91b47cf37344a91eae_0?page=4&showData=true)
-- **Description:** This dataset includes counts of social media posts that mention COVID-19 for each included county, though the Midwest suffers from a paucity of data as time progresses. This data is provided per week starting in January, 2020, and is updated through August, but we only use the data starting in April due to the time constraints of our other datasets, particularly the CDC anxiety and depression data.
+- **Description:** This dataset includes counts of social media posts that mention COVID-19 for each included county, though the central United States region suffers from a paucity of data as time progresses. This data is provided per week starting in January, 2020, and is updated through August, but we only use the data starting in April.
 - We've included this dataset because social media in our modern era is inextricably entwined with mental health and self-expression. The dataset includes county locations, total posts per week, unique users per week, and sentiment analysis values. For our analysis we only use county locations and total posts per week, which we've changed into months.
 - It was necessary to have both this dataset and Dataset 2 because Dataset 2 does not include pre-analyzed sentiment values while this one does, and we wanted to perform our own sentiment analysis with Dataset 2. This dataset was necessary because we needed geographic indicators (county-level, specifically) in order to create our spatial visualizations.
 
