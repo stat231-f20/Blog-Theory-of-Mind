@@ -32,7 +32,7 @@ This blog post looks at different aspects of mental and social health during the
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 ## GENERAL WORD CLOUD
 # read in data for general word cloud
-covid_words <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/text analysis/covid_words.csv")
+covid_words <- read_csv(paste0(path_karen, "text analysis/covid_words.csv"))
 pal <- brewer.pal(8, "Dark2") # define color palette for word cloud
 set.seed(2) # set seed for reproducibility
 # create word cloud
@@ -48,16 +48,16 @@ covid_words %>%
 ## Data
 
 ```{r, echo = FALSE}
-d1 <- "https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm"
-d2 <- "https://www.kaggle.com/gpreda/covid19-tweets"
-datainfosets <- c(d1, d2)
-radioButtons("link",
-            label = "Choose a dataset to learn more about:",
-            choiceValues = datainfosets,
-            choiceNames = c("CDC Anxiety/Depression Surveys", "Covid-19 Tweets"))
-renderUI({
-  input$link
-})
+# d1 <- "https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm"
+# d2 <- "https://www.kaggle.com/gpreda/covid19-tweets"
+# datainfosets <- c(d1, d2)
+# radioButtons("link",
+#             label = "Choose a dataset to learn more about:",
+#             choiceValues = datainfosets,
+#             choiceNames = c("CDC Anxiety/Depression Surveys", "Covid-19 Tweets"))
+# renderUI({
+#   input$link
+# })
 ```
 
 
@@ -151,7 +151,7 @@ We conducted a sentiment analysis on full text tweets from July 24 to August 30 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 ## SENTIMENT ANALYSIS
 # read in data for general sentiment analysis
-nrc_tweets_sent <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/text analysis/nrc_tweets_sent.csv")
+nrc_tweets_sent <- read_csv(paste0(path_karen, "text analysis/nrc_tweets_sent.csv"))
 # plotting number of words by all sentiments in the tweets
 nrc_tweets_sent %>%
   ggplot(aes(x = reorder(sentiment,n), y = n, color = sentiment, fill = sentiment)) +
@@ -163,7 +163,7 @@ nrc_tweets_sent %>%
        title="Number of Words by Sentiment in Covid-19 Tweets") +
   guides(color = "none", fill = "none")
 # read in data for anxiety and depression related sentiment analysis
-nrc_tweets_words <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/text analysis/nrc_tweets_words.csv")
+nrc_tweets_words <- read_csv(paste0(path_karen, "text analysis/nrc_tweets_words.csv"))
 # plotting words by anxiety and depression relevant sentiments
 ggplot(data = nrc_tweets_words, aes(x = reorder(word, n),
                                     y = n,
@@ -182,7 +182,7 @@ Since we noticed some overlap in the top 10 most common words for anxiety and de
 ```{r, warning = FALSE, message=FALSE}
 ## COMPARISON WORD CLOUD
 # read in data to create term document matrix for comparison and commonality clouds
-nrc_tweets_cloud <- read_csv("/Users/avatillman/git/Blog-Theory-of-Mind/text analysis/nrc_tweets_cloud.csv")
+nrc_tweets_cloud <- read_csv(paste0(path_karen, "text analysis/nrc_tweets_cloud.csv"))
 # create a term document matrix for the comparison.cloud function
 tdm <- nrc_tweets_cloud %>%
   # need to take unigrams in word out to create the matrix
