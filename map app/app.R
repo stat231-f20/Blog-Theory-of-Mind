@@ -47,10 +47,15 @@ df_choices_names <- c("Anxiety and depression during Covid-19",
                       "Stress levels associated with state mandates in response to Covid-19",
                       "CDC 2018 Social Vulnerability Index")
 
-plot_titles <- c("Percentage of people reporting either anxiety or depression, state-level",
-                 "Number of times the pandemic was mentioned in social media, monthly",
+plot_titles <- c("Percentage of people reporting either anxiety or depression",
+                 "Log of the number of times the pandemic was mentioned in social media",
                  "Stress associated with state mandates in response to Covid-19",
                  "CDC 2018 Social Vulnerability Index")
+
+plot_subtitles <- c("Monthly, state-level",
+                   "Monthly, county-level",
+                   "Based on states' initial responses",
+                   "Based on census tracts, evaluated in 2018")
 
 
 # ui 
@@ -111,8 +116,8 @@ server <- function(input, output){
       theme_void() +
       coord_fixed(ratio = 1.3) +
       labs(title = plot_titles[df_choices == input$df1],
-           subtitle = "Across the United States", fill = "",
-           caption = "For county-level maps, grey counties have no data.") +
+           subtitle = plot_subtitles[df_choices == input$df1],
+           caption = "Regions colored in gray have no data.", fill = "") +
       scale_fill_viridis(option = "magma", direction = -1)
     
     if (input$cities) {
@@ -129,8 +134,8 @@ server <- function(input, output){
       theme_void() +
       coord_fixed(ratio = 1.3) +
       labs(title = plot_titles[df_choices == input$df2],
-           subtitle = "Across the United States", fill = "",
-           caption = "For county-level maps, grey counties have no data.") +
+           subtitle = plot_subtitles[df_choices == input$df2],
+           caption = "Regions colored in gray have no data.", fill = "") +
       scale_fill_viridis(option = "magma", direction = -1)
     
     if (input$cities) {

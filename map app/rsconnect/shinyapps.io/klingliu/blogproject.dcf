@@ -5,8 +5,8 @@ account: klingliu
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3233457
-bundleId: 3861053
+bundleId: 3868442
 url: https://klingliu.shinyapps.io/blogproject/
-when: 1605386516.85669
+when: 1605560743.09448
 asMultiple: FALSE
 asStatic: FALSE

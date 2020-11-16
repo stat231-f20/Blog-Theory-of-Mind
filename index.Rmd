@@ -6,7 +6,6 @@ output:
   rmdformats::readthedown:
     thumbnails: false
     highlight: NULL
-runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
@@ -54,21 +53,7 @@ covid_words %>%
 ```
 
 
-## Data
-
-```{r, echo = FALSE}
-# d1 <- "https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm"
-# d2 <- "https://www.kaggle.com/gpreda/covid19-tweets"
-# datainfosets <- c(d1, d2)
-# radioButtons("link",
-#             label = "Choose a dataset to learn more about:",
-#             choiceValues = datainfosets,
-#             choiceNames = c("CDC Anxiety/Depression Surveys", "Covid-19 Tweets"))
-# renderUI({
-#   input$link
-# })
-```
-
+# Data
 
 **Dataset 1: CDC Anxiety/Depression Surveys**
 
@@ -109,8 +94,7 @@ covid_words %>%
 
 - **Link:** https://coronavirus-resources.esri.com/datasets/NGA2::covid19-state-and-territory-actions-download?showData=true
 - **Description:** This dataset compiles information on how each state initially reacted to the pandemic around the month of March, 2020. The variables include written descriptions of what each state did in regard to curfew, masks, wage changes, non-essential business closures, limits on gathering, emergency declarations, travel restrictions, school closures, and more.
-- To turn this dataset into something quantifiable for the spatial mapping, we focused in on three variables — mask policy, curfew, and wage changes because we felt that these were generally the most representative for all the other variables in the dataset. Each variable was converted to a scale of 1 to 4 based on the policy. For example, for mask policy, the levels were "Recommendation", "Mandatory (for essential business employees)", "Mandatory (for essential business employees and patrons while on premises)", and "Mandatory". These were assigned values of 1, 2, 3, and 4, respectively, based on their perceived causative power for stress. In the end, a scale of 1-12 indicated the relative "stress" imposed by the state government onto the citizens on the basis of the pandemic.
-- Note that our stress scale does not necessarily correlate with a "good" or "bad" government, and even less so political affiliation. Even though there are certainly political factors that can lead to certain governments making "bad" decisions for public health, population is also an important factor that affects a state's policies. Even more importantly, in this pandemic certain "bad" decisions are the more relaxing ones while other "bad" decisions are more stressful. Take for example curfew; enforced curfew was assigned a 4 for stress but is considered a "good" government decision, while "no wage extension" was also assigned a 4 for stress but is considered a "bad" government decision.
+- We focused in on three variables — mask policy, curfew, and wage changes.
 
 **Other Datasets**
 These other datasets were used for the spatial visualizations, which required extra geographic information.
@@ -185,7 +169,7 @@ ggplot(data = nrc_tweets_words, aes(x = reorder(word, n),
   coord_flip()
 ```
 
-## Comparison World Cloud
+## Comparison Word Cloud
 
 Since we noticed some overlap in the top 10 most common words for anxiety and depression related sentiments, we decided to create a comparison word cloud to visually depict words by these 4 sentiments. Of note, comparison clouds are similar to typical word clouds, but they allow you to visualize the most frequent words across different categories. Additionally, the code for comparison clouds requires the data to be formatted into a term document matrix (tdm), as demonstrated above. The words are colored by the sentiment they primarily belong to, and the size of the words indicates how frequently they were used. We found that pandemic was the most common Sadness word, government and risk were among the most common Fear words, virus was the most common Negative word, and vaccine was the most common Positive word.
 
@@ -211,7 +195,7 @@ comparison.cloud(tdm, random.order=FALSE,
 ```
 
 
-## Commonality World Cloud
+## Commonality Word Cloud
 
 A commonality cloud is a type of word cloud that allows you to visualize the most common words across different categories. Similar to the comparison cloud, a term document matrix is needed. We only compared words across the fear, negative, and sadness sentiments, as positive did not have enough words in common with the other three to produce a meaningful cloud. Based on the cloud produced, we can see that pandemic is by far the most commonly used word across the fear, negative, and sadness sentiments. Death is the second most common. The rest of the words in purple indicate other words that are common and shared by all three sentiment categories. The large amount of purple words demonstrates that there are numerous words in the covid 19 tweets that span the sentiment categories of fear, negative, and sadness. 
 
@@ -237,9 +221,111 @@ commonality.cloud(tdm_common, random.order = FALSE,
 
 ## Spatial Data
 
+Our spatial visualizations depict the values of certain explanatory variables across the contiguous United States during the months of April 2020 to August 2020, from near the beginning of the Covid-19 pandemic in the U.S. to the current time. We've chosen to hone in on anxiety and depression through time, our main dataset; social media counts of how many times Covid-19 was mentioned per county, through time; the initial state mandates in response to Covid-19 such as lockdown procedures; and the CDC's 2018 Social Vulnerability Index. Looking at these variables together should give us an idea of how these social factors may interact with each other during the current crisis. In addition to these variables, the hardest-hit cities have been represented by green dots on the map, which are sized according the number of cases in that city; this should provide a view of how regions highly impacted by the pandemic are performing with respect to our main variables.
+
+[Click here to explore some maps!](https://klingliu.shinyapps.io/blogproject/)
+
 ```{r, echo = FALSE}
 # knitr::include_app('https://klingliu.shinyapps.io/blogproject/', height = '1000px')
 ```
+
+```{r, echo = F}
+# Here, you can select a dataset to link to in case there is a need to quickly reference the source.
+# d1 <- "https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm"
+# d2 <- "https://www.kaggle.com/gpreda/covid19-tweets"
+# datainfosets <- c(d1, d2)
+# 
+# link_choices <- as.list(c("None",
+#                           "https://github.com/nytimes/covid-19-data",
+#                           "https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm",
+#                           "https://coronavirus-resources.esri.com/datasets/feb6280d42de4e91b47cf37344a91eae_0?page=4&showData=true",
+#                           "https://coronavirus-resources.esri.com/datasets/NGA2::covid19-state-and-territory-actions-download?showData=true",
+#                           "https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html"))
+# names(link_choices) <- c("None",
+#                          "Covid-19 Data",
+#                          "CDC Anxiety and Depression",
+#                          "Social Media Counts",
+#                          "State Actions in Response to Covid-19",
+#                          "CDC 2018 Social Vulnerability Index")
+# 
+# selectInput("link",
+#             label = "Choose a dataset to learn more about:",
+#             choices = link_choices,
+#             selected = "None")
+# 
+# renderUI({
+#   tags$a(href = input$link, "Click here for the link!", target = "_blank")
+# })
+```
+
+Choose a tab of interest to read more.
+
+# {.tabset .tabset-fade .tabset-pills}
+
+## Usage of Data
+
+While the usage of the anxiety and depression, social media, and social vulnerability datasets were rather straightforward (directly used quantitative variables on predetermined scales), the usage of the state actions dataset was not. The state actions are, of course, not listed in numbers — the dataset only means to provide us a summary of every state's policies in words; so, we had to find a way to turn this dataset into something that *is* quantifiable for our maps.
+
+We focused in on three variables — mask policy, curfew, and wage changes because we felt that these were generally the most representative for all the other variables in the dataset. Each variable was converted to a scale of 1 to 4 based on the policy. For example, for mask policy, the levels were "Recommendation", "Mandatory (for essential business employees)", "Mandatory (for essential business employees and patrons while on premises)", and "Mandatory". These were assigned values of 1, 2, 3, and 4, respectively, based on their perceived causative power for stress. In the end, a scale of 1-12 indicated the relative "stress" imposed by the state government onto the citizens on the basis of the pandemic.
+
+Note that our stress scale does not necessarily correlate with a "good" or "bad" government, and even less so political affiliation. Even though there are certainly political factors that can lead to certain governments making "bad" decisions for public health, population is also an important factor that affects a state's policies. Even more importantly, in this pandemic certain "bad" decisions are the more relaxing ones while other "bad" decisions are more stressful. Take for example curfew; enforced curfew was assigned a 4 for stress but is considered a "good" government decision, while "no wage extension" was also assigned a 4 for stress but is considered a "bad" government decision.
+
+## Trends
+
+**Quick Overview**
+
+*Covid-19 Cases*
+
+- As the pandemic progressed, cases decreased in New England and increased everywhere else.
+- This is relevant; please keep in mind for the other variables!
+
+*Anxiety and Depression*
+
+- Coastal and southern states tended to report higher levels of anxiety and depression than did the rest of the U.S. The northern central states and the Midwest were the least depressed.
+- Anxiety and depression tended to increase as the pandemic progressed.
+
+*Social Media Counts*
+
+- Overall, the most urban areas had the highest counts of Covid-19 mentions.*
+- Mentions of Covid-19 slowly increased from April to August.
+
+*State Actions and Responses*
+
+- It appears that the projected stress resulting from state responses was highest in the west, the south, and New England.**
+
+*Social Vulnerability Index (SVI)*
+
+- Communities arching along the Pacific coast and the south had higher SVI's than did the rest of the country, with the communities in the southern portion of the East Coast being the most socially vulnerable.
+- The northern central states and the Midwest had the lowest SVI's.
+
+**Relationships**
+
+- Anxiety and depression rose at the quickest rate in the more socially vulnerable regions.
+- Anxiety and depression were also highest where there were the most cases.*
+- Higher stress values were associated with greater anxiety and depression.
+- Cases were more prevalent in more socially vulnerable regions than in others.
+- Social media counts were highest where there were the most cases.*
+
+
+*See Limitations tab.
+**As mentioned in the Usage of Data tab, this does not at all correlate with the perceived "healthiness" (public, physical, or mental) of the state's actions.
+
+## Impact
+
+The overall conclusion that this map seems to support is that urban areas *and* socially vulnerable populations are by far the most likely to fall victim to Covid-19 and experience mental health decline. This is interesting because social vulnerability was not necessarily at its highest in the urban coastal areas, though it was certainly higher there than in rural areas. Regardless of the overlap between urbanism and social vulnerability, the relationship between these two groups and health detriments appears to be quite strong as we look at these maps side by side.
+
+Social media does not seem to have too high of a relationship with any of the other variables, and if it does, then social media activity's relationship to urbanism most likely eclipses any other relationships that may be able to appear. Interestingly, though, mentions of Covid-19 slowly increased from April to August; this is worth noting because, rather than becoming weary of discussing the pandemic, it seems that interest and concern steadily mounted as time continued.
+
+State actions were also tricky to assess because too many underlying variables muddle the correlation between stress levels associated with state mandate and the other variables. This will be further discussed in the Limitations tab.
+
+## Limitations
+
+- The most obvious limitation is in the quantification of the state actions dataset. State actions are difficult to quantify fairly, as we would have to weigh each variable's importance in the production of "stress". Furthermore, the quantification may be able to be improved by incorporating more of the variables, but for this project it was too tricky of an operation to code, so we settled on picking the most representative variables.
+- The most important limitation that is applicable to all the analysis is that there are many lurking variables behind our selected variables of interest. Political alignment, population size and density, urbanism, and ruralism all affect the truth behind the relationships that we *seem* to see in these maps. Political alignment, as discussed before in Usage of Data, heavily affects the state mandate-associated stress values. Population density is a cause of greater numbers of Covid-19 cases and may eclipse other reasons for having high case counts. Urbanism and ruralism are huge lurking variables, as urbanism tends to be associated with greater reports of anxiety and depression, whether this is because of lessened stigma in urban areas or greater stress in fast-moving cities. Urbanism also affects social vulnerability, as easier access to resources draws in vulnerable individuals while higher costs of living exacerbate many communities' situations. Nonresponse bias could also be a problem in rural areas because rural areas may be less likely or less able to respond.
+- The city values for Covid-19 cases are not actually the values for those cities; rather, those are the values for the county that the city is in, and the city that is plotted was simply picked for being the most representative of that county (having the greatest population). This works well visually since we cannot tell which cities are which son the map, and the points are simply there for us to gauge the general presence of cases. Still, this is a limitation worth noting.
+- In the social media data, more and more counties have missing data as time progresses.
+
+# {-}
 
 # Conclusion
 
@@ -249,4 +335,16 @@ Limitations of this text and sentiment analysis include the fact that the data w
 
 Our text analyses could be improved by examining tweets about the pandemic over a longer period of time, for example, a few months, rather than just one. Additionally, we could broaden the scope of hashtags used and examine tweets with other hashtags related to the coronavirus, rather than relying on one, #covid19. Furthermore, in future work it would be interesting to conduct text and sentiment analyses not only on coronavirus related tweets, but also text such as news stories, academic research articles, or even posts from other social media sites to get a more comprehensive view of how individuals are using words to express certain sentiments during this time.
 
-Our text analyses could be improved by examining tweets about the pandemic over a longer period of time, for example, a few months, rather than just one. Additionally, we could broaden the scope of hashtags used and examine tweets with other hashtags related to the coronavirus, rather than relying on one, #covid19. Furthermore, in future work it would be interesting to conduct text and sentiment analyses not only on coronavirus related tweets, but also text such as news stories, academic research articles, or even posts from other social media sites to get a more comprehensive view of how individuals are using words to express certain sentiments during this time.
+
+# Bibliography
+
+1. Centers for Disease Control and Prevention/ Agency for Toxic Substances and Disease Registry/ Geospatial Research, Analysis, and Services Program. CDC Social Vulnerability Index 2018 Database US. https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html.
+2. Centers for Disease Control and Prevention/ National Center for Health Statistics. NCHS Household Pulse Survey, Anxiety and Depression. 2020. https://www.cdc.gov/nchs/covid19/pulse/mental-health.htm
+3. National Governors Association. COVID-19 State and Territory Actions Tracker. 2020. https://coronavirus-resources.esri.com/datasets/NGA2::covid19-state-and-territory-actions-download?showData=true
+4. Simplemaps. United States Cities Database. 2020. https://simplemaps.com/data/us-cities
+5. Spatial.ai & Datastory. COVID-19 Social Media Counts & Sentiment. 2020. https://coronavirus-resources.esri.com/datasets/feb6280d42de4e91b47cf37344a91eae_0?orderBy=current_fl&showData=true
+6. *The New York Times*. Coronavirus (Covid-19) Data in the United States. 2020. https://github.com/nytimes/covid-19-data
+
+
+
+
