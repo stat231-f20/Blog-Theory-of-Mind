@@ -1551,33 +1551,29 @@ $(document).ready(function () {
       <ul>
       <li><a href="#introduction">Introduction</a></li>
       <li><a href="#data">Data</a></li>
-      <li><a href="#results">Results</a><ul>
-      <li><a href="#clustering-of-anxiety-depression-rates-by-demographic-group">Clustering of Anxiety Depression rates by Demographic Group</a></li>
-      </ul></li>
-      <li><a href="#section"></a><ul>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#clusters-of-anxietydepression-rates-by-demographic"><span>Clusters of Anxiety/Depression rates by Demographic</span></a><ul>
       <li><a href="#trends">Trends</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#limitations">Limitations</a></li>
       </ul></li>
-      <li><a href="#section-1"></a><ul>
-      <li><a href="#text-analysis-for-covid-tweets">Text Analysis for Covid Tweets</a></li>
-      </ul></li>
-      <li><a href="#section-2"></a><ul>
+      <li><a href="#section"></a></li>
+      <li><a href="#text-analysis-for-covid-tweets">Text Analysis for Covid Tweets</a><ul>
       <li><a href="#sentiment-analysis">Sentiment Analysis</a></li>
       <li><a href="#comparison-cloud">Comparison Cloud</a></li>
       <li><a href="#commonality-cloud">Commonality Cloud</a></li>
       <li><a href="#conclusionlimitations">Conclusion/Limitations</a></li>
       </ul></li>
-      <li><a href="#section-3"></a><ul>
+      <li><a href="#section-1"></a><ul>
       <li><a href="#spatial-data">Spatial Data</a></li>
       </ul></li>
-      <li><a href="#section-4"></a><ul>
+      <li><a href="#choose-a-tab-of-interest-to-read-more.">Choose a tab of interest to read more.</a><ul>
       <li><a href="#usage-of-data">Usage of Data</a></li>
       <li><a href="#trends-1">Trends</a></li>
       <li><a href="#impact-1">Impact</a></li>
       <li><a href="#limitations-1">Limitations</a></li>
       </ul></li>
-      <li><a href="#section-5"></a></li>
+      <li><a href="#section-2"></a></li>
       <li><a href="#conclusion">Conclusion</a></li>
       <li><a href="#bibliography">Bibliography</a></li>
       </ul>
@@ -1641,13 +1637,9 @@ $(document).ready(function () {
 </div>
 <div id="results" class="section level1">
 <h1>Results</h1>
-<div id="clustering-of-anxiety-depression-rates-by-demographic-group" class="section level2">
-<h2>Clustering of Anxiety Depression rates by Demographic Group</h2>
-<p><a href="https://avatillman.shinyapps.io/kmeans_app/">Click here to Explore these Patterns!</a></p>
 </div>
-</div>
-<div id="section" class="section level1 tabset tabset-fade tabset-pills">
-<h1></h1>
+<div id="clusters-of-anxietydepression-rates-by-demographic" class="section level1 tabset tabset-fade tabset-pills">
+<h1><a href="https://avatillman.shinyapps.io/kmeans_app/">Clusters of Anxiety/Depression rates by Demographic</a></h1>
 <div id="trends" class="section level2">
 <h2>Trends</h2>
 <ul>
@@ -1677,14 +1669,11 @@ $(document).ready(function () {
 </ul>
 </div>
 </div>
-<div id="section-1" class="section level1 unnumbered">
+<div id="section" class="section level1 unnumbered">
 <h1></h1>
-<div id="text-analysis-for-covid-tweets" class="section level2">
-<h2>Text Analysis for Covid Tweets</h2>
 </div>
-</div>
-<div id="section-2" class="section level1 tabset tabset-fade tabset-pills">
-<h1></h1>
+<div id="text-analysis-for-covid-tweets" class="section level1 tabset tabset-fade tabset-pills">
+<h1>Text Analysis for Covid Tweets</h1>
 <div id="sentiment-analysis" class="section level2">
 <h2>Sentiment Analysis</h2>
 <p>We conducted a sentiment analysis on full text tweets from July 24 to August 30 2020 that used the #covid19. We separated the tweets into unigrams and performed a sentiment analysis, using sentiments from the nrc lexicon. We found that the most common sentiment in the tweets was Negative, followed by Positive, Fear, Trust, Anger, Sadness, Disgust, Anticipation, Joy, and the least common sentiment was surprise. After the general sentiment analysis, we examined the top 10 most common words that belonged to sentiments related to anxiety and depression, specifically Positive, Negative, Fear, and Sadness. Interestingly, quite a few of the top 10 words overlap for Negative, Fear, and Sadness, such as: pandemic, death, hospital, etc. Overall, exploring the most common anxiety and depression related words individuals used in tweets about covid 19 helps us to gain a new perspective on how individuals were feeling during this time.</p>
@@ -1739,17 +1728,16 @@ commonality.cloud(tdm_common, random.order = FALSE,
 <p>Our text analyses could be improved by examining tweets about the pandemic over a longer period of time, for example, a few months, rather than just one. Additionally, we could broaden the scope of hashtags used and examine tweets with other hashtags related to the coronavirus, rather than relying on one, #covid19. Furthermore, in future work it would be interesting to conduct text and sentiment analyses not only on coronavirus related tweets, but also text such as news stories, academic research articles, or even posts from other social media sites to get a more comprehensive view of how individuals are using words to express certain sentiments during this time.</p>
 </div>
 </div>
-<div id="section-3" class="section level1 unnumbered">
+<div id="section-1" class="section level1 unnumbered">
 <h1></h1>
 <div id="spatial-data" class="section level2">
 <h2>Spatial Data</h2>
 <p>Our spatial visualizations depict the values of certain explanatory variables across the contiguous United States during the months of April 2020 to August 2020, from near the beginning of the Covid-19 pandemic in the U.S. to the current time. We’ve chosen to hone in on anxiety and depression through time, our main dataset; social media counts of how many times Covid-19 was mentioned per county, through time; the initial state mandates in response to Covid-19 such as lockdown procedures; and the CDC’s 2018 Social Vulnerability Index. Looking at these variables together should give us an idea of how these social factors may interact with each other during the current crisis. In addition to these variables, the hardest-hit cities have been represented by green dots on the map, which are sized according the number of cases in that city; this should provide a view of how regions highly impacted by the pandemic are performing with respect to our main variables.</p>
 <p><a href="https://klingliu.shinyapps.io/blogproject/">Click here to explore some maps!</a></p>
-<p>Choose a tab of interest to read more.</p>
 </div>
 </div>
-<div id="section-4" class="section level1 tabset tabset-fade tabset-pills">
-<h1></h1>
+<div id="choose-a-tab-of-interest-to-read-more." class="section level1 tabset tabset-fade tabset-pills">
+<h1>Choose a tab of interest to read more.</h1>
 <div id="usage-of-data" class="section level2">
 <h2>Usage of Data</h2>
 <p>While the usage of the anxiety and depression, social media, and social vulnerability datasets were rather straightforward (directly used quantitative variables on predetermined scales), the usage of the state actions dataset was not. The state actions are, of course, not listed in numbers — the dataset only means to provide us a summary of every state’s policies in words; so, we had to find a way to turn this dataset into something that <em>is</em> quantifiable for our maps.</p>
@@ -1809,7 +1797,7 @@ commonality.cloud(tdm_common, random.order = FALSE,
 </ul>
 </div>
 </div>
-<div id="section-5" class="section level1 unnumbered">
+<div id="section-2" class="section level1 unnumbered">
 <h1></h1>
 </div>
 <div id="conclusion" class="section level1">
