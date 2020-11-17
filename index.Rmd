@@ -105,10 +105,7 @@ These other datasets were used for the spatial visualizations, which required ex
 
 # Results
 
-## Clustering of Anxiety Depression rates by Demographic Group
-[Click here to Explore these Patterns!](https://avatillman.shinyapps.io/kmeans_app/)
-
-# {.tabset .tabset-fade .tabset-pills}
+# [Clusters of Anxiety/Depression rates by Demographic](https://avatillman.shinyapps.io/kmeans_app/) # {.tabset .tabset-fade .tabset-pills}
 
 ## Trends
 
@@ -135,8 +132,7 @@ These other datasets were used for the spatial visualizations, which required ex
 # {-}
 
 
-## Text Analysis for Covid Tweets
-# {.tabset .tabset-fade .tabset-pills}
+# Text Analysis for Covid Tweets # {.tabset .tabset-fade .tabset-pills}
 
 ## Sentiment Analysis
 
@@ -265,9 +261,7 @@ Our spatial visualizations depict the values of certain explanatory variables ac
 # })
 ```
 
-Choose a tab of interest to read more.
-
-# {.tabset .tabset-fade .tabset-pills}
+# Choose a tab of interest to read more. # {.tabset .tabset-fade .tabset-pills}
 
 ## Usage of Data
 
