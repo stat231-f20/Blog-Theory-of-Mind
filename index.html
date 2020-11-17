@@ -1551,8 +1551,7 @@ $(document).ready(function () {
       <ul>
       <li><a href="#introduction">Introduction</a></li>
       <li><a href="#data">Data</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#clusters-of-anxietydepression-rates-by-demographic"><span>Clusters of Anxiety/Depression rates by Demographic</span></a><ul>
+      <li><a href="#clustering-by-demographic">Clustering by Demographic</a><ul>
       <li><a href="#trends">Trends</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#limitations">Limitations</a></li>
@@ -1564,14 +1563,9 @@ $(document).ready(function () {
       <li><a href="#commonality-cloud">Commonality Cloud</a></li>
       <li><a href="#conclusionlimitations">Conclusion/Limitations</a></li>
       </ul></li>
-      <li><a href="#section-1"></a><ul>
-      <li><a href="#spatial-data">Spatial Data</a></li>
-      </ul></li>
-      <li><a href="#choose-a-tab-of-interest-to-read-more.">Choose a tab of interest to read more.</a><ul>
-      <li><a href="#usage-of-data">Usage of Data</a></li>
-      <li><a href="#trends-1">Trends</a></li>
-      <li><a href="#impact-1">Impact</a></li>
-      <li><a href="#limitations-1">Limitations</a></li>
+      <li><a href="#section-1"></a></li>
+      <li><a href="#spatial-data">Spatial Data</a><ul>
+      <li><a href="#results">Results</a></li>
       </ul></li>
       <li><a href="#section-2"></a></li>
       <li><a href="#conclusion">Conclusion</a></li>
@@ -1635,11 +1629,9 @@ $(document).ready(function () {
 <li>County-level and state-level data from the <code>maps</code> package</li>
 </ol>
 </div>
-<div id="results" class="section level1">
-<h1>Results</h1>
-</div>
-<div id="clusters-of-anxietydepression-rates-by-demographic" class="section level1 tabset tabset-fade tabset-pills">
-<h1><a href="https://avatillman.shinyapps.io/kmeans_app/">Clusters of Anxiety/Depression rates by Demographic</a></h1>
+<div id="clustering-by-demographic" class="section level1 tabset tabset-fade tabset-pills">
+<h1>Clustering by Demographic</h1>
+<p>Click <a href="https://avatillman.shinyapps.io/kmeans_app/">here</a> to explore trends in anxiety and depression</p>
 <div id="trends" class="section level2">
 <h2>Trends</h2>
 <ul>
@@ -1730,22 +1722,21 @@ commonality.cloud(tdm_common, random.order = FALSE,
 </div>
 <div id="section-1" class="section level1 unnumbered">
 <h1></h1>
-<div id="spatial-data" class="section level2">
-<h2>Spatial Data</h2>
+</div>
+<div id="spatial-data" class="section level1">
+<h1>Spatial Data</h1>
 <p>Our spatial visualizations depict the values of certain explanatory variables across the contiguous United States during the months of April 2020 to August 2020, from near the beginning of the Covid-19 pandemic in the U.S. to the current time. We’ve chosen to hone in on anxiety and depression through time, our main dataset; social media counts of how many times Covid-19 was mentioned per county, through time; the initial state mandates in response to Covid-19 such as lockdown procedures; and the CDC’s 2018 Social Vulnerability Index. Looking at these variables together should give us an idea of how these social factors may interact with each other during the current crisis. In addition to these variables, the hardest-hit cities have been represented by green dots on the map, which are sized according the number of cases in that city; this should provide a view of how regions highly impacted by the pandemic are performing with respect to our main variables.</p>
 <p><a href="https://klingliu.shinyapps.io/blogproject/">Click here to explore some maps!</a></p>
-</div>
-</div>
-<div id="choose-a-tab-of-interest-to-read-more." class="section level1 tabset tabset-fade tabset-pills">
-<h1>Choose a tab of interest to read more.</h1>
-<div id="usage-of-data" class="section level2">
-<h2>Usage of Data</h2>
+<div id="results" class="section level2 tabset tabset-fade tabset-pills">
+<h2>Results</h2>
+<div id="usage-of-data" class="section level3">
+<h3>Usage of Data</h3>
 <p>While the usage of the anxiety and depression, social media, and social vulnerability datasets were rather straightforward (directly used quantitative variables on predetermined scales), the usage of the state actions dataset was not. The state actions are, of course, not listed in numbers — the dataset only means to provide us a summary of every state’s policies in words; so, we had to find a way to turn this dataset into something that <em>is</em> quantifiable for our maps.</p>
 <p>We focused in on three variables — mask policy, curfew, and wage changes because we felt that these were generally the most representative for all the other variables in the dataset. Each variable was converted to a scale of 1 to 4 based on the policy. For example, for mask policy, the levels were “Recommendation”, “Mandatory (for essential business employees)”, “Mandatory (for essential business employees and patrons while on premises)”, and “Mandatory”. These were assigned values of 1, 2, 3, and 4, respectively, based on their perceived causative power for stress. In the end, a scale of 1-12 indicated the relative “stress” imposed by the state government onto the citizens on the basis of the pandemic.</p>
 <p>Note that our stress scale does not necessarily correlate with a “good” or “bad” government, and even less so political affiliation. Even though there are certainly political factors that can lead to certain governments making “bad” decisions for public health, population is also an important factor that affects a state’s policies. Even more importantly, in this pandemic certain “bad” decisions are the more relaxing ones while other “bad” decisions are more stressful. Take for example curfew; enforced curfew was assigned a 4 for stress but is considered a “good” government decision, while “no wage extension” was also assigned a 4 for stress but is considered a “bad” government decision.</p>
 </div>
-<div id="trends-1" class="section level2">
-<h2>Trends</h2>
+<div id="trends-1" class="section level3">
+<h3>Trends</h3>
 <p><strong>Quick Overview</strong></p>
 <p><em>Covid-19 Cases</em></p>
 <ul>
@@ -1781,20 +1772,21 @@ commonality.cloud(tdm_common, random.order = FALSE,
 </ul>
 <p>*See Limitations tab. **As mentioned in the Usage of Data tab, this does not at all correlate with the perceived “healthiness” (public, physical, or mental) of the state’s actions.</p>
 </div>
-<div id="impact-1" class="section level2">
-<h2>Impact</h2>
+<div id="impact-1" class="section level3">
+<h3>Impact</h3>
 <p>The overall conclusion that this map seems to support is that urban areas <em>and</em> socially vulnerable populations are by far the most likely to fall victim to Covid-19 and experience mental health decline. This is interesting because social vulnerability was not necessarily at its highest in the urban coastal areas, though it was certainly higher there than in rural areas. Regardless of the overlap between urbanism and social vulnerability, the relationship between these two groups and health detriments appears to be quite strong as we look at these maps side by side.</p>
 <p>Social media does not seem to have too high of a relationship with any of the other variables, and if it does, then social media activity’s relationship to urbanism most likely eclipses any other relationships that may be able to appear. Interestingly, though, mentions of Covid-19 slowly increased from April to August; this is worth noting because, rather than becoming weary of discussing the pandemic, it seems that interest and concern steadily mounted as time continued.</p>
 <p>State actions were also tricky to assess because too many underlying variables muddle the correlation between stress levels associated with state mandate and the other variables. This will be further discussed in the Limitations tab.</p>
 </div>
-<div id="limitations-1" class="section level2">
-<h2>Limitations</h2>
+<div id="limitations-1" class="section level3">
+<h3>Limitations</h3>
 <ul>
 <li>The most obvious limitation is in the quantification of the state actions dataset. State actions are difficult to quantify fairly, as we would have to weigh each variable’s importance in the production of “stress”. Furthermore, the quantification may be able to be improved by incorporating more of the variables, but for this project it was too tricky of an operation to code, so we settled on picking the most representative variables.</li>
 <li>The most important limitation that is applicable to all the analysis is that there are many lurking variables behind our selected variables of interest. Political alignment, population size and density, urbanism, and ruralism all affect the truth behind the relationships that we <em>seem</em> to see in these maps. Political alignment, as discussed before in Usage of Data, heavily affects the state mandate-associated stress values. Population density is a cause of greater numbers of Covid-19 cases and may eclipse other reasons for having high case counts. Urbanism and ruralism are huge lurking variables, as urbanism tends to be associated with greater reports of anxiety and depression, whether this is because of lessened stigma in urban areas or greater stress in fast-moving cities. Urbanism also affects social vulnerability, as easier access to resources draws in vulnerable individuals while higher costs of living exacerbate many communities’ situations. Nonresponse bias could also be a problem in rural areas because rural areas may be less likely or less able to respond.</li>
 <li>The city values for Covid-19 cases are not actually the values for those cities; rather, those are the values for the county that the city is in, and the city that is plotted was simply picked for being the most representative of that county (having the greatest population). This works well visually since we cannot tell which cities are which son the map, and the points are simply there for us to gauge the general presence of cases. Still, this is a limitation worth noting.</li>
 <li>In the social media data, more and more counties have missing data as time progresses.</li>
 </ul>
+</div>
 </div>
 </div>
 <div id="section-2" class="section level1 unnumbered">
