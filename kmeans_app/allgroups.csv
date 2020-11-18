@@ -1,0 +1,981 @@
+Group,Subgroup,dat,Depression,Anxiety
+National Estimate,United States,2020-04-23,23.5,30.8
+By Age,18 - 29,2020-04-23,32.7,40.2
+By Age,30 - 39,2020-04-23,25.7,34.4
+By Age,40 - 49,2020-04-23,24.8,34.1
+By Age,50 - 59,2020-04-23,23.2,31
+By Age,60 - 69,2020-04-23,18.4,24.9
+By Age,70 - 79,2020-04-23,13.6,16.4
+By Age,80+,2020-04-23,14.4,14.6
+By Gender,Male,2020-04-23,20.8,26.1
+By Gender,Female,2020-04-23,26.1,35.4
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-04-23,29.4,36.3
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-04-23,21.4,29
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-04-23,25.6,32.8
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-04-23,23.6,26.3
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-04-23,28.3,38.2
+By Education,Less than a high school diploma,2020-04-23,32.7,37.3
+By Education,High school diploma or GED,2020-04-23,25.4,30.6
+By Education,Some college/Associate's degree,2020-04-23,25.6,33.5
+By Education,Bachelor's degree or higher,2020-04-23,17.6,27
+By State,Alabama,2020-04-23,18.6,25.6
+By State,Alaska,2020-04-23,19.2,27.7
+By State,Arizona,2020-04-23,22.4,32.3
+By State,Arkansas,2020-04-23,26.6,33.7
+By State,California,2020-04-23,25.4,30.8
+By State,Colorado,2020-04-23,22,32.6
+By State,Connecticut,2020-04-23,24.4,34.9
+By State,Delaware,2020-04-23,21.1,29.9
+By State,District of Columbia,2020-04-23,26.4,31.4
+By State,Florida,2020-04-23,22.5,32.6
+By State,Georgia,2020-04-23,25.6,31.9
+By State,Hawaii,2020-04-23,20,32.3
+By State,Idaho,2020-04-23,20.6,26.9
+By State,Illinois,2020-04-23,23.3,31.1
+By State,Indiana,2020-04-23,26.4,31.8
+By State,Iowa,2020-04-23,16.5,22.5
+By State,Kansas,2020-04-23,22.1,26.4
+By State,Kentucky,2020-04-23,23.2,31.6
+By State,Louisiana,2020-04-23,28.1,34.4
+By State,Maine,2020-04-23,19.5,29.5
+By State,Maryland,2020-04-23,20.9,27.7
+By State,Massachusetts,2020-04-23,25.9,37
+By State,Michigan,2020-04-23,25.5,32.5
+By State,Minnesota,2020-04-23,20.4,28.5
+By State,Mississippi,2020-04-23,22.9,30.3
+By State,Missouri,2020-04-23,21,30.4
+By State,Montana,2020-04-23,18.2,22.8
+By State,Nebraska,2020-04-23,19.1,24.2
+By State,Nevada,2020-04-23,23.6,31.4
+By State,New Hampshire,2020-04-23,19.5,31.3
+By State,New Jersey,2020-04-23,23.6,31.4
+By State,New Mexico,2020-04-23,22.4,27.9
+By State,New York,2020-04-23,28.7,36.1
+By State,North Carolina,2020-04-23,21.1,30
+By State,North Dakota,2020-04-23,17,21.7
+By State,Ohio,2020-04-23,21.2,31.1
+By State,Oklahoma,2020-04-23,20.8,28.6
+By State,Oregon,2020-04-23,22.5,31.5
+By State,Pennsylvania,2020-04-23,24.7,31
+By State,Rhode Island,2020-04-23,24.5,27.6
+By State,South Carolina,2020-04-23,21.6,27.8
+By State,South Dakota,2020-04-23,17.5,22.1
+By State,Tennessee,2020-04-23,22.2,28.2
+By State,Texas,2020-04-23,24.4,29.7
+By State,Utah,2020-04-23,22.9,28.9
+By State,Vermont,2020-04-23,20.7,30.6
+By State,Virginia,2020-04-23,21.5,28.5
+By State,Washington,2020-04-23,22.1,30.6
+By State,West Virginia,2020-04-23,23.4,28.8
+By State,Wisconsin,2020-04-23,22,27.1
+By State,Wyoming,2020-04-23,18.9,24.9
+National Estimate,United States,2020-05-07,24.1,30
+By Age,18 - 29,2020-05-07,36.2,42
+By Age,30 - 39,2020-05-07,27.7,34.3
+By Age,40 - 49,2020-05-07,25.5,31.9
+By Age,50 - 59,2020-05-07,24.1,31.3
+By Age,60 - 69,2020-05-07,17.6,22
+By Age,70 - 79,2020-05-07,12.2,16.4
+By Age,80+,2020-05-07,9.1,11
+By Gender,Male,2020-05-07,22.3,26.7
+By Gender,Female,2020-05-07,25.8,33.1
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-05-07,27.9,36.2
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-05-07,22.5,27.8
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-05-07,27.7,33
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-05-07,19.5,26.3
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-05-07,33,38.9
+By Education,Less than a high school diploma,2020-05-07,31.4,36.6
+By Education,High school diploma or GED,2020-05-07,27.1,32.8
+By Education,Some college/Associate's degree,2020-05-07,26.5,31.5
+By Education,Bachelor's degree or higher,2020-05-07,17.2,24.2
+By State,Alabama,2020-05-07,22.5,27.2
+By State,Alaska,2020-05-07,25.1,27.4
+By State,Arizona,2020-05-07,25.3,34.2
+By State,Arkansas,2020-05-07,24.5,29.1
+By State,California,2020-05-07,22.8,31.4
+By State,Colorado,2020-05-07,23.6,29.7
+By State,Connecticut,2020-05-07,21.5,29.1
+By State,Delaware,2020-05-07,23.3,24.9
+By State,District of Columbia,2020-05-07,30.3,36.2
+By State,Florida,2020-05-07,24.8,27.6
+By State,Georgia,2020-05-07,25.6,29.5
+By State,Hawaii,2020-05-07,16.8,20.4
+By State,Idaho,2020-05-07,17,25
+By State,Illinois,2020-05-07,29.2,35.7
+By State,Indiana,2020-05-07,19.9,31.5
+By State,Iowa,2020-05-07,18.1,20.3
+By State,Kansas,2020-05-07,16.7,25.1
+By State,Kentucky,2020-05-07,25.6,29.6
+By State,Louisiana,2020-05-07,30,34.6
+By State,Maine,2020-05-07,17.1,28.9
+By State,Maryland,2020-05-07,24.6,30.1
+By State,Massachusetts,2020-05-07,18.9,28.7
+By State,Michigan,2020-05-07,23.4,27
+By State,Minnesota,2020-05-07,18.4,22.9
+By State,Mississippi,2020-05-07,35.5,38.3
+By State,Missouri,2020-05-07,24.1,37.8
+By State,Montana,2020-05-07,20.8,24.9
+By State,Nebraska,2020-05-07,21.6,29.6
+By State,Nevada,2020-05-07,31.2,34
+By State,New Hampshire,2020-05-07,23.3,30.4
+By State,New Jersey,2020-05-07,26.4,36.3
+By State,New Mexico,2020-05-07,29,30.2
+By State,New York,2020-05-07,29.2,33
+By State,North Carolina,2020-05-07,20.2,25.9
+By State,North Dakota,2020-05-07,20.2,25.4
+By State,Ohio,2020-05-07,26.4,26.4
+By State,Oklahoma,2020-05-07,20.7,27.2
+By State,Oregon,2020-05-07,17.8,26.2
+By State,Pennsylvania,2020-05-07,23,28.4
+By State,Rhode Island,2020-05-07,22.8,26.9
+By State,South Carolina,2020-05-07,25.6,27.9
+By State,South Dakota,2020-05-07,20.5,26.1
+By State,Tennessee,2020-05-07,21.7,29.6
+By State,Texas,2020-05-07,25.7,32.4
+By State,Utah,2020-05-07,22.6,26
+By State,Vermont,2020-05-07,26.8,31.8
+By State,Virginia,2020-05-07,20.6,26.8
+By State,Washington,2020-05-07,22.9,28.5
+By State,West Virginia,2020-05-07,31.8,34.6
+By State,Wisconsin,2020-05-07,22.9,25.6
+By State,Wyoming,2020-05-07,18.6,22.5
+National Estimate,United States,2020-05-14,24.4,28.2
+By Age,18 - 29,2020-05-14,36.7,38.6
+By Age,30 - 39,2020-05-14,26.7,32.2
+By Age,40 - 49,2020-05-14,25,30.7
+By Age,50 - 59,2020-05-14,24.6,28.4
+By Age,60 - 69,2020-05-14,18,22.3
+By Age,70 - 79,2020-05-14,12.3,13.4
+By Age,80+,2020-05-14,14.4,11.8
+By Gender,Male,2020-05-14,22.1,24.2
+By Gender,Female,2020-05-14,26.7,32.1
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-05-14,28.9,33.6
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-05-14,22.7,26.3
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-05-14,28.5,32.7
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-05-14,20.9,23.4
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-05-14,27.1,31.3
+By Education,Less than a high school diploma,2020-05-14,31.3,34.3
+By Education,High school diploma or GED,2020-05-14,27.8,30.5
+By Education,Some college/Associate's degree,2020-05-14,26.8,30.2
+By Education,Bachelor's degree or higher,2020-05-14,17.3,22.7
+By State,Alabama,2020-05-14,19.6,20.7
+By State,Alaska,2020-05-14,23.6,26.2
+By State,Arizona,2020-05-14,20,29
+By State,Arkansas,2020-05-14,28.9,28.7
+By State,California,2020-05-14,28.7,32.3
+By State,Colorado,2020-05-14,23.7,27.6
+By State,Connecticut,2020-05-14,20.2,28.7
+By State,Delaware,2020-05-14,21.8,26.6
+By State,District of Columbia,2020-05-14,25.9,33.3
+By State,Florida,2020-05-14,24.3,28.2
+By State,Georgia,2020-05-14,24.8,27.6
+By State,Hawaii,2020-05-14,21.3,24.1
+By State,Idaho,2020-05-14,18.1,24
+By State,Illinois,2020-05-14,24.3,28.5
+By State,Indiana,2020-05-14,24.5,32.6
+By State,Iowa,2020-05-14,18.6,19
+By State,Kansas,2020-05-14,21.2,26.7
+By State,Kentucky,2020-05-14,22.8,27.7
+By State,Louisiana,2020-05-14,26.5,27.9
+By State,Maine,2020-05-14,25.6,30.6
+By State,Maryland,2020-05-14,20.8,28.3
+By State,Massachusetts,2020-05-14,22.8,27.4
+By State,Michigan,2020-05-14,27.9,28.5
+By State,Minnesota,2020-05-14,20,27.1
+By State,Mississippi,2020-05-14,36.4,36.1
+By State,Missouri,2020-05-14,24.3,30.4
+By State,Montana,2020-05-14,21.1,25.7
+By State,Nebraska,2020-05-14,20.4,23.3
+By State,Nevada,2020-05-14,26.9,29
+By State,New Hampshire,2020-05-14,20.3,25.2
+By State,New Jersey,2020-05-14,26.9,34.4
+By State,New Mexico,2020-05-14,28.4,29.6
+By State,New York,2020-05-14,23.8,26.8
+By State,North Carolina,2020-05-14,22.6,28.4
+By State,North Dakota,2020-05-14,22.5,26.2
+By State,Ohio,2020-05-14,27,26.2
+By State,Oklahoma,2020-05-14,25.7,25.2
+By State,Oregon,2020-05-14,22.7,24.2
+By State,Pennsylvania,2020-05-14,19.8,25.8
+By State,Rhode Island,2020-05-14,18.8,23.9
+By State,South Carolina,2020-05-14,25.3,28.5
+By State,South Dakota,2020-05-14,22.7,22.3
+By State,Tennessee,2020-05-14,25.6,24.8
+By State,Texas,2020-05-14,24.9,28.8
+By State,Utah,2020-05-14,21.2,26.1
+By State,Vermont,2020-05-14,19,25.8
+By State,Virginia,2020-05-14,25.4,26.8
+By State,Washington,2020-05-14,23.2,28.9
+By State,West Virginia,2020-05-14,27,29.3
+By State,Wisconsin,2020-05-14,20.3,23.4
+By State,Wyoming,2020-05-14,20.7,24.1
+National Estimate,United States,2020-05-21,24.9,29.4
+By Age,18 - 29,2020-05-21,36.7,39.1
+By Age,30 - 39,2020-05-21,27.4,35.2
+By Age,40 - 49,2020-05-21,24.2,31.4
+By Age,50 - 59,2020-05-21,24.6,29.3
+By Age,60 - 69,2020-05-21,19.8,22.2
+By Age,70 - 79,2020-05-21,13.3,15
+By Age,80+,2020-05-21,17.1,17.1
+By Gender,Male,2020-05-21,22.7,25.4
+By Gender,Female,2020-05-21,26.9,33.2
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-05-21,31.4,36.3
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-05-21,23.3,27.6
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-05-21,24.8,30.2
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-05-21,19.5,22.2
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-05-21,32.2,38.6
+By Education,Less than a high school diploma,2020-05-21,38.7,40.6
+By Education,High school diploma or GED,2020-05-21,26.6,29.5
+By Education,Some college/Associate's degree,2020-05-21,27.6,32.4
+By Education,Bachelor's degree or higher,2020-05-21,17.3,23.7
+By State,Alabama,2020-05-21,20.9,25.2
+By State,Alaska,2020-05-21,26.8,31.6
+By State,Arizona,2020-05-21,25.1,29.3
+By State,Arkansas,2020-05-21,23.8,28.6
+By State,California,2020-05-21,26.9,30.4
+By State,Colorado,2020-05-21,25.5,28.8
+By State,Connecticut,2020-05-21,21,24.7
+By State,Delaware,2020-05-21,22.7,24.2
+By State,District of Columbia,2020-05-21,20.9,29.9
+By State,Florida,2020-05-21,28.6,34.1
+By State,Georgia,2020-05-21,27.7,32.6
+By State,Hawaii,2020-05-21,18.5,19.6
+By State,Idaho,2020-05-21,18.9,22.1
+By State,Illinois,2020-05-21,24.2,30.3
+By State,Indiana,2020-05-21,24.8,30.5
+By State,Iowa,2020-05-21,17.6,20.6
+By State,Kansas,2020-05-21,25.2,30.1
+By State,Kentucky,2020-05-21,23.2,30.8
+By State,Louisiana,2020-05-21,31.1,36
+By State,Maine,2020-05-21,18.5,24.5
+By State,Maryland,2020-05-21,22.9,25.8
+By State,Massachusetts,2020-05-21,20.3,25.5
+By State,Michigan,2020-05-21,25.1,27.5
+By State,Minnesota,2020-05-21,17.7,22.8
+By State,Mississippi,2020-05-21,27.7,31.9
+By State,Missouri,2020-05-21,24.3,29
+By State,Montana,2020-05-21,22.2,24.3
+By State,Nebraska,2020-05-21,17.2,22.6
+By State,Nevada,2020-05-21,27.1,35.6
+By State,New Hampshire,2020-05-21,22.2,24.6
+By State,New Jersey,2020-05-21,22.9,26.2
+By State,New Mexico,2020-05-21,28.7,35.4
+By State,New York,2020-05-21,23.7,30.6
+By State,North Carolina,2020-05-21,22.1,27.5
+By State,North Dakota,2020-05-21,19.8,22.1
+By State,Ohio,2020-05-21,27.4,29.8
+By State,Oklahoma,2020-05-21,27.5,27.3
+By State,Oregon,2020-05-21,24.2,32.1
+By State,Pennsylvania,2020-05-21,25.9,28
+By State,Rhode Island,2020-05-21,21.4,30.6
+By State,South Carolina,2020-05-21,21.7,27
+By State,South Dakota,2020-05-21,25.8,30.4
+By State,Tennessee,2020-05-21,22.5,29.6
+By State,Texas,2020-05-21,28.8,32.6
+By State,Utah,2020-05-21,24.9,25.5
+By State,Vermont,2020-05-21,19.4,23.3
+By State,Virginia,2020-05-21,22.3,28.7
+By State,Washington,2020-05-21,22.2,26.8
+By State,West Virginia,2020-05-21,22,34.5
+By State,Wisconsin,2020-05-21,20.8,24.7
+By State,Wyoming,2020-05-21,18.8,24
+National Estimate,United States,2020-05-28,25.3,30.6
+By Age,18 - 29,2020-05-28,36.8,42.2
+By Age,30 - 39,2020-05-28,27.9,35.8
+By Age,40 - 49,2020-05-28,25.7,32.1
+By Age,50 - 59,2020-05-28,25.1,29.3
+By Age,60 - 69,2020-05-28,18,23
+By Age,70 - 79,2020-05-28,15.5,18.2
+By Age,80+,2020-05-28,14.9,13.3
+By Gender,Male,2020-05-28,23,26
+By Gender,Female,2020-05-28,27.4,35
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-05-28,26.3,32.1
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-05-28,23.7,29
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-05-28,29.9,33.8
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-05-28,22,28.4
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-05-28,37.6,44.6
+By Education,Less than a high school diploma,2020-05-28,31.9,37.8
+By Education,High school diploma or GED,2020-05-28,27.8,31.4
+By Education,Some college/Associate's degree,2020-05-28,27.8,32.8
+By Education,Bachelor's degree or higher,2020-05-28,18.6,25.9
+By State,Alabama,2020-05-28,28.4,31.6
+By State,Alaska,2020-05-28,24.4,26.1
+By State,Arizona,2020-05-28,23.9,27.9
+By State,Arkansas,2020-05-28,28.9,35.3
+By State,California,2020-05-28,26.9,33.8
+By State,Colorado,2020-05-28,23.9,29.4
+By State,Connecticut,2020-05-28,25.4,26.7
+By State,Delaware,2020-05-28,20.7,26.2
+By State,District of Columbia,2020-05-28,21.3,28.2
+By State,Florida,2020-05-28,29.6,33.8
+By State,Georgia,2020-05-28,24.5,31.7
+By State,Hawaii,2020-05-28,17,20.7
+By State,Idaho,2020-05-28,23.8,28.3
+By State,Illinois,2020-05-28,26.9,31.3
+By State,Indiana,2020-05-28,25.6,31.5
+By State,Iowa,2020-05-28,22.6,27.8
+By State,Kansas,2020-05-28,23.1,28.3
+By State,Kentucky,2020-05-28,28.5,33.3
+By State,Louisiana,2020-05-28,26.8,31
+By State,Maine,2020-05-28,18.5,25.2
+By State,Maryland,2020-05-28,21.9,26.1
+By State,Massachusetts,2020-05-28,20.3,26.7
+By State,Michigan,2020-05-28,25.9,29
+By State,Minnesota,2020-05-28,19.1,27.5
+By State,Mississippi,2020-05-28,28.6,33.8
+By State,Missouri,2020-05-28,24.5,30.1
+By State,Montana,2020-05-28,20.5,22.6
+By State,Nebraska,2020-05-28,18.2,22.2
+By State,Nevada,2020-05-28,20.2,30.3
+By State,New Hampshire,2020-05-28,22.6,26.7
+By State,New Jersey,2020-05-28,25.8,31.8
+By State,New Mexico,2020-05-28,24.3,37.1
+By State,New York,2020-05-28,24.5,29.8
+By State,North Carolina,2020-05-28,22.3,29.6
+By State,North Dakota,2020-05-28,19.3,18.4
+By State,Ohio,2020-05-28,28.1,29.6
+By State,Oklahoma,2020-05-28,31.8,31.7
+By State,Oregon,2020-05-28,27.6,35.3
+By State,Pennsylvania,2020-05-28,24.6,31.4
+By State,Rhode Island,2020-05-28,22.3,30.8
+By State,South Carolina,2020-05-28,28.8,29.2
+By State,South Dakota,2020-05-28,20,26.3
+By State,Tennessee,2020-05-28,22.9,30.4
+By State,Texas,2020-05-28,26.2,31.1
+By State,Utah,2020-05-28,22.3,29.7
+By State,Vermont,2020-05-28,23.5,31.8
+By State,Virginia,2020-05-28,21.4,28.3
+By State,Washington,2020-05-28,27.1,31.7
+By State,West Virginia,2020-05-28,26.2,33.6
+By State,Wisconsin,2020-05-28,17.7,22.7
+By State,Wyoming,2020-05-28,25.2,25.3
+National Estimate,United States,2020-06-04,25.8,31.1
+By Age,18 - 29,2020-06-04,37,41.7
+By Age,30 - 39,2020-06-04,29.1,36.8
+By Age,40 - 49,2020-06-04,27,34.9
+By Age,50 - 59,2020-06-04,26,31.8
+By Age,60 - 69,2020-06-04,19.8,22.3
+By Age,70 - 79,2020-06-04,13.1,15.4
+By Age,80+,2020-06-04,12.3,13.7
+By Gender,Male,2020-06-04,23.7,26.8
+By Gender,Female,2020-06-04,27.8,35.1
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-06-04,30.8,34
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-06-04,23.9,29.6
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-06-04,29.6,34.6
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-06-04,19.8,25.6
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-06-04,33.9,40.4
+By Education,Less than a high school diploma,2020-06-04,37.1,36.9
+By Education,High school diploma or GED,2020-06-04,27.6,31
+By Education,Some college/Associate's degree,2020-06-04,28.2,33.6
+By Education,Bachelor's degree or higher,2020-06-04,18.9,27.3
+By State,Alabama,2020-06-04,27.7,33.7
+By State,Alaska,2020-06-04,21.5,26.2
+By State,Arizona,2020-06-04,26.5,30.8
+By State,Arkansas,2020-06-04,26.5,31.6
+By State,California,2020-06-04,28.6,33.7
+By State,Colorado,2020-06-04,23.9,30.9
+By State,Connecticut,2020-06-04,20.7,27.7
+By State,Delaware,2020-06-04,25.3,28.5
+By State,District of Columbia,2020-06-04,25.9,33
+By State,Florida,2020-06-04,30.2,34.8
+By State,Georgia,2020-06-04,25.6,32.7
+By State,Hawaii,2020-06-04,19.5,20.7
+By State,Idaho,2020-06-04,19.2,28.6
+By State,Illinois,2020-06-04,27.9,34.2
+By State,Indiana,2020-06-04,22.2,28.7
+By State,Iowa,2020-06-04,25.7,31.9
+By State,Kansas,2020-06-04,28.6,29.9
+By State,Kentucky,2020-06-04,25.5,33
+By State,Louisiana,2020-06-04,28.4,32.5
+By State,Maine,2020-06-04,20.6,31.5
+By State,Maryland,2020-06-04,18.4,22.8
+By State,Massachusetts,2020-06-04,21.8,26.1
+By State,Michigan,2020-06-04,19.1,24.6
+By State,Minnesota,2020-06-04,19.7,27.5
+By State,Mississippi,2020-06-04,29.6,31.9
+By State,Missouri,2020-06-04,23.1,23.2
+By State,Montana,2020-06-04,17.5,26.4
+By State,Nebraska,2020-06-04,21.7,23.5
+By State,Nevada,2020-06-04,27.6,33.3
+By State,New Hampshire,2020-06-04,26.2,31.7
+By State,New Jersey,2020-06-04,21.8,30.7
+By State,New Mexico,2020-06-04,23.7,28.6
+By State,New York,2020-06-04,28.5,36.3
+By State,North Carolina,2020-06-04,21.6,33.3
+By State,North Dakota,2020-06-04,14.7,20.2
+By State,Ohio,2020-06-04,26.4,30.6
+By State,Oklahoma,2020-06-04,24.7,28.9
+By State,Oregon,2020-06-04,27.1,35
+By State,Pennsylvania,2020-06-04,24.7,29.2
+By State,Rhode Island,2020-06-04,19,26.6
+By State,South Carolina,2020-06-04,25,23.7
+By State,South Dakota,2020-06-04,21.2,25.6
+By State,Tennessee,2020-06-04,27.2,30.6
+By State,Texas,2020-06-04,30.3,33
+By State,Utah,2020-06-04,25.3,28
+By State,Vermont,2020-06-04,25.1,29.8
+By State,Virginia,2020-06-04,27.5,29.5
+By State,Washington,2020-06-04,21.4,29.4
+By State,West Virginia,2020-06-04,27.9,35.8
+By State,Wisconsin,2020-06-04,19.5,25.3
+By State,Wyoming,2020-06-04,20.9,21.3
+National Estimate,United States,2020-06-11,25.1,31.7
+By Age,18 - 29,2020-06-11,36.8,42.9
+By Age,30 - 39,2020-06-11,26.7,35.8
+By Age,40 - 49,2020-06-11,25.9,34.8
+By Age,50 - 59,2020-06-11,24.6,31.7
+By Age,60 - 69,2020-06-11,19.6,23.6
+By Age,70 - 79,2020-06-11,15.5,18
+By Age,80+,2020-06-11,9.9,14.6
+By Gender,Male,2020-06-11,23.3,28.1
+By Gender,Female,2020-06-11,26.7,35
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-06-11,28.4,33.6
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-06-11,23.5,30.6
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-06-11,28.3,35.8
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-06-11,21,26
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-06-11,32.3,37.6
+By Education,Less than a high school diploma,2020-06-11,31.4,37.7
+By Education,High school diploma or GED,2020-06-11,27.5,32.5
+By Education,Some college/Associate's degree,2020-06-11,28.4,34.5
+By Education,Bachelor's degree or higher,2020-06-11,17.9,26.6
+By State,Alabama,2020-06-11,26.7,33.9
+By State,Alaska,2020-06-11,23.5,33.3
+By State,Arizona,2020-06-11,25,25.6
+By State,Arkansas,2020-06-11,29.6,33.7
+By State,California,2020-06-11,27.2,33.7
+By State,Colorado,2020-06-11,22.1,29.8
+By State,Connecticut,2020-06-11,25.5,35.1
+By State,Delaware,2020-06-11,24.4,30.2
+By State,District of Columbia,2020-06-11,16.3,25.9
+By State,Florida,2020-06-11,28.1,37.4
+By State,Georgia,2020-06-11,25.7,33.3
+By State,Hawaii,2020-06-11,26.8,31.7
+By State,Idaho,2020-06-11,14.3,26
+By State,Illinois,2020-06-11,24.8,31
+By State,Indiana,2020-06-11,26.6,33.8
+By State,Iowa,2020-06-11,22.4,26.1
+By State,Kansas,2020-06-11,24.6,30.5
+By State,Kentucky,2020-06-11,22.6,26.6
+By State,Louisiana,2020-06-11,34.5,38.4
+By State,Maine,2020-06-11,23.7,32.2
+By State,Maryland,2020-06-11,27.9,34.6
+By State,Massachusetts,2020-06-11,17,27.3
+By State,Michigan,2020-06-11,21.4,30.2
+By State,Minnesota,2020-06-11,19.9,28
+By State,Mississippi,2020-06-11,24.8,31.6
+By State,Missouri,2020-06-11,26.1,33.3
+By State,Montana,2020-06-11,21.8,30.6
+By State,Nebraska,2020-06-11,20.3,24.1
+By State,Nevada,2020-06-11,30.4,33.5
+By State,New Hampshire,2020-06-11,21.7,28.1
+By State,New Jersey,2020-06-11,26.9,33.5
+By State,New Mexico,2020-06-11,18.8,22.7
+By State,New York,2020-06-11,23.4,28.7
+By State,North Carolina,2020-06-11,23.9,30
+By State,North Dakota,2020-06-11,23.4,30.3
+By State,Ohio,2020-06-11,26.8,31.5
+By State,Oklahoma,2020-06-11,22.5,30.9
+By State,Oregon,2020-06-11,31.1,39.8
+By State,Pennsylvania,2020-06-11,25.5,28.4
+By State,Rhode Island,2020-06-11,24.1,25.5
+By State,South Carolina,2020-06-11,28.1,30.6
+By State,South Dakota,2020-06-11,19.2,24.5
+By State,Tennessee,2020-06-11,21.5,28.7
+By State,Texas,2020-06-11,27.6,35.5
+By State,Utah,2020-06-11,18.5,32
+By State,Vermont,2020-06-11,26.2,33
+By State,Virginia,2020-06-11,23.3,30.1
+By State,Washington,2020-06-11,22.5,29.3
+By State,West Virginia,2020-06-11,23.5,26.7
+By State,Wisconsin,2020-06-11,17.5,23.5
+By State,Wyoming,2020-06-11,18.9,24.2
+National Estimate,United States,2020-06-18,25.6,31.2
+By Age,18 - 29,2020-06-18,36.7,42.8
+By Age,30 - 39,2020-06-18,28.3,36
+By Age,40 - 49,2020-06-18,26.2,34
+By Age,50 - 59,2020-06-18,26,32.4
+By Age,60 - 69,2020-06-18,19.3,23.1
+By Age,70 - 79,2020-06-18,14.5,14.8
+By Age,80+,2020-06-18,10.8,11.4
+By Gender,Male,2020-06-18,23.8,27.4
+By Gender,Female,2020-06-18,27.3,34.8
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-06-18,29,36.5
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-06-18,24.2,29.8
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-06-18,28.1,32.6
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-06-18,20.1,23
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-06-18,34.1,39.7
+By Education,Less than a high school diploma,2020-06-18,31.4,36.6
+By Education,High school diploma or GED,2020-06-18,28.8,32.7
+By Education,Some college/Associate's degree,2020-06-18,28.6,33.7
+By Education,Bachelor's degree or higher,2020-06-18,18.2,26
+By State,Alabama,2020-06-18,27.5,33.7
+By State,Alaska,2020-06-18,25.7,31.8
+By State,Arizona,2020-06-18,28.9,34.7
+By State,Arkansas,2020-06-18,28.7,32.7
+By State,California,2020-06-18,26.4,34.4
+By State,Colorado,2020-06-18,23,26.7
+By State,Connecticut,2020-06-18,28.7,34.5
+By State,Delaware,2020-06-18,22.9,23.6
+By State,District of Columbia,2020-06-18,31,39.6
+By State,Florida,2020-06-18,28.8,33.3
+By State,Georgia,2020-06-18,27.9,32.6
+By State,Hawaii,2020-06-18,18.3,22.9
+By State,Idaho,2020-06-18,23,28.3
+By State,Illinois,2020-06-18,23.8,30.6
+By State,Indiana,2020-06-18,23.7,30.6
+By State,Iowa,2020-06-18,26.1,32.4
+By State,Kansas,2020-06-18,24.4,29.4
+By State,Kentucky,2020-06-18,29,33.2
+By State,Louisiana,2020-06-18,35.6,41.3
+By State,Maine,2020-06-18,19,24.1
+By State,Maryland,2020-06-18,22,30.1
+By State,Massachusetts,2020-06-18,22.8,27.9
+By State,Michigan,2020-06-18,23.3,27.4
+By State,Minnesota,2020-06-18,21.5,25
+By State,Mississippi,2020-06-18,29.3,31.8
+By State,Missouri,2020-06-18,25,28.3
+By State,Montana,2020-06-18,21.6,27.8
+By State,Nebraska,2020-06-18,22.1,25
+By State,Nevada,2020-06-18,32.5,38.4
+By State,New Hampshire,2020-06-18,23,31.2
+By State,New Jersey,2020-06-18,24.4,30.8
+By State,New Mexico,2020-06-18,29.4,39
+By State,New York,2020-06-18,24.2,26.9
+By State,North Carolina,2020-06-18,22.5,29.1
+By State,North Dakota,2020-06-18,25.1,28.7
+By State,Ohio,2020-06-18,21.5,27.7
+By State,Oklahoma,2020-06-18,33.2,39
+By State,Oregon,2020-06-18,31,37.1
+By State,Pennsylvania,2020-06-18,27.3,32.7
+By State,Rhode Island,2020-06-18,22.1,28.2
+By State,South Carolina,2020-06-18,22.4,31.4
+By State,South Dakota,2020-06-18,21.7,24.2
+By State,Tennessee,2020-06-18,26.8,30.8
+By State,Texas,2020-06-18,25.6,32.1
+By State,Utah,2020-06-18,27.3,33.3
+By State,Vermont,2020-06-18,18.4,25
+By State,Virginia,2020-06-18,26.9,31.9
+By State,Washington,2020-06-18,26.4,30.5
+By State,West Virginia,2020-06-18,30.2,34.7
+By State,Wisconsin,2020-06-18,15.7,21.3
+By State,Wyoming,2020-06-18,17.6,23.7
+National Estimate,United States,2020-06-25,26.9,33
+By Age,18 - 29,2020-06-25,36.6,42.4
+By Age,30 - 39,2020-06-25,30.7,38.9
+By Age,40 - 49,2020-06-25,27.7,35.4
+By Age,50 - 59,2020-06-25,27.1,33.9
+By Age,60 - 69,2020-06-25,20.5,25
+By Age,70 - 79,2020-06-25,16.1,18.6
+By Age,80+,2020-06-25,15.2,16.2
+By Gender,Male,2020-06-25,25,29
+By Gender,Female,2020-06-25,28.8,36.7
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-06-25,31.1,37
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-06-25,24.9,31.4
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-06-25,30.9,35.1
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-06-25,21.5,24.3
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-06-25,36.8,45.4
+By Education,Less than a high school diploma,2020-06-25,37.1,41
+By Education,High school diploma or GED,2020-06-25,28.7,33.5
+By Education,Some college/Associate's degree,2020-06-25,30,36.4
+By Education,Bachelor's degree or higher,2020-06-25,19.4,26.9
+By State,Alabama,2020-06-25,26.5,28.7
+By State,Alaska,2020-06-25,23.8,32.5
+By State,Arizona,2020-06-25,32.7,39.7
+By State,Arkansas,2020-06-25,29.6,33.5
+By State,California,2020-06-25,27.6,32.2
+By State,Colorado,2020-06-25,26.1,33
+By State,Connecticut,2020-06-25,24,32.5
+By State,Delaware,2020-06-25,25.4,27.4
+By State,District of Columbia,2020-06-25,27.6,29.6
+By State,Florida,2020-06-25,31.8,37.7
+By State,Georgia,2020-06-25,31.4,36.8
+By State,Hawaii,2020-06-25,28.2,31.5
+By State,Idaho,2020-06-25,29.5,32.9
+By State,Illinois,2020-06-25,28.1,33.7
+By State,Indiana,2020-06-25,26.2,34.7
+By State,Iowa,2020-06-25,23.1,31.5
+By State,Kansas,2020-06-25,20.9,28
+By State,Kentucky,2020-06-25,26.4,33.9
+By State,Louisiana,2020-06-25,32.2,40.5
+By State,Maine,2020-06-25,23.8,32
+By State,Maryland,2020-06-25,22.1,29.5
+By State,Massachusetts,2020-06-25,24.2,28.7
+By State,Michigan,2020-06-25,23.5,29.7
+By State,Minnesota,2020-06-25,22.3,25.1
+By State,Mississippi,2020-06-25,34.4,36.5
+By State,Missouri,2020-06-25,25.6,32.2
+By State,Montana,2020-06-25,22.2,25.7
+By State,Nebraska,2020-06-25,22,27.8
+By State,Nevada,2020-06-25,26.8,35
+By State,New Hampshire,2020-06-25,24.3,27.5
+By State,New Jersey,2020-06-25,24.2,30.2
+By State,New Mexico,2020-06-25,29.7,32.2
+By State,New York,2020-06-25,23.9,30.6
+By State,North Carolina,2020-06-25,22.7,30.4
+By State,North Dakota,2020-06-25,25,29.4
+By State,Ohio,2020-06-25,23.3,28.8
+By State,Oklahoma,2020-06-25,32.8,36.5
+By State,Oregon,2020-06-25,27.1,34.1
+By State,Pennsylvania,2020-06-25,26.5,33.4
+By State,Rhode Island,2020-06-25,24,28.9
+By State,South Carolina,2020-06-25,28.9,35
+By State,South Dakota,2020-06-25,25.1,31.4
+By State,Tennessee,2020-06-25,30.5,37.6
+By State,Texas,2020-06-25,28.2,35.9
+By State,Utah,2020-06-25,26,33
+By State,Vermont,2020-06-25,22.3,29.7
+By State,Virginia,2020-06-25,24.2,29.3
+By State,Washington,2020-06-25,31.1,37
+By State,West Virginia,2020-06-25,34.5,40.5
+By State,Wisconsin,2020-06-25,19,25.5
+By State,Wyoming,2020-06-25,23.4,31.6
+National Estimate,United States,2020-07-02,27.6,34
+By Age,18 - 29,2020-07-02,35.8,44.4
+By Age,30 - 39,2020-07-02,31.7,40.6
+By Age,40 - 49,2020-07-02,27.6,36.1
+By Age,50 - 59,2020-07-02,28.2,33.4
+By Age,60 - 69,2020-07-02,21.8,26.5
+By Age,70 - 79,2020-07-02,17.8,18.4
+By Age,80+,2020-07-02,18.7,19.3
+By Gender,Male,2020-07-02,26.6,30.7
+By Gender,Female,2020-07-02,28.6,37
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-07-02,30.9,37.1
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-07-02,26,32.9
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-07-02,29.9,34
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-07-02,25,29.9
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-07-02,35.6,43.3
+By Education,Less than a high school diploma,2020-07-02,38.3,40.7
+By Education,High school diploma or GED,2020-07-02,29.1,34.9
+By Education,Some college/Associate's degree,2020-07-02,31.2,37
+By Education,Bachelor's degree or higher,2020-07-02,19.9,28.3
+By State,Alabama,2020-07-02,28.6,34.4
+By State,Alaska,2020-07-02,21.5,27.3
+By State,Arizona,2020-07-02,31.3,36.6
+By State,Arkansas,2020-07-02,30.2,34.7
+By State,California,2020-07-02,27.6,32.9
+By State,Colorado,2020-07-02,30,35.4
+By State,Connecticut,2020-07-02,26.3,33.6
+By State,Delaware,2020-07-02,22.7,27.3
+By State,District of Columbia,2020-07-02,24.9,35.2
+By State,Florida,2020-07-02,27.9,37.8
+By State,Georgia,2020-07-02,27.1,32.5
+By State,Hawaii,2020-07-02,28.9,34.2
+By State,Idaho,2020-07-02,25.6,32.7
+By State,Illinois,2020-07-02,27.6,35.1
+By State,Indiana,2020-07-02,27.7,34.8
+By State,Iowa,2020-07-02,17.5,29.6
+By State,Kansas,2020-07-02,21.5,32.3
+By State,Kentucky,2020-07-02,27.4,36.3
+By State,Louisiana,2020-07-02,33.5,38.6
+By State,Maine,2020-07-02,26.6,32.8
+By State,Maryland,2020-07-02,22.5,32.2
+By State,Massachusetts,2020-07-02,21.8,30.1
+By State,Michigan,2020-07-02,26.6,31.1
+By State,Minnesota,2020-07-02,20.9,27.6
+By State,Mississippi,2020-07-02,32,40.2
+By State,Missouri,2020-07-02,28.8,35.3
+By State,Montana,2020-07-02,23.8,31.7
+By State,Nebraska,2020-07-02,23.6,25.7
+By State,Nevada,2020-07-02,34.6,40.6
+By State,New Hampshire,2020-07-02,19.7,32.5
+By State,New Jersey,2020-07-02,25.9,33.6
+By State,New Mexico,2020-07-02,32.5,38.1
+By State,New York,2020-07-02,28.5,34.7
+By State,North Carolina,2020-07-02,28.3,33.4
+By State,North Dakota,2020-07-02,23,29.1
+By State,Ohio,2020-07-02,25.6,31.9
+By State,Oklahoma,2020-07-02,29.4,39.4
+By State,Oregon,2020-07-02,29.9,35.4
+By State,Pennsylvania,2020-07-02,26,33.2
+By State,Rhode Island,2020-07-02,22.8,31.4
+By State,South Carolina,2020-07-02,29.3,31.4
+By State,South Dakota,2020-07-02,26.7,31.3
+By State,Tennessee,2020-07-02,31.7,34.6
+By State,Texas,2020-07-02,30.5,36.1
+By State,Utah,2020-07-02,25,29.1
+By State,Vermont,2020-07-02,22.2,29.2
+By State,Virginia,2020-07-02,29.5,29.5
+By State,Washington,2020-07-02,27.8,37.5
+By State,West Virginia,2020-07-02,24.2,31.9
+By State,Wisconsin,2020-07-02,24.6,30.7
+By State,Wyoming,2020-07-02,26.5,31.5
+National Estimate,United States,2020-07-09,28.1,35.6
+By Age,18 - 29,2020-07-09,39,47.7
+By Age,30 - 39,2020-07-09,32.3,42.9
+By Age,40 - 49,2020-07-09,28.5,37.7
+By Age,50 - 59,2020-07-09,29.2,34.7
+By Age,60 - 69,2020-07-09,21.7,27.8
+By Age,70 - 79,2020-07-09,13.9,17.8
+By Age,80+,2020-07-09,12,15.6
+By Gender,Male,2020-07-09,26,31.5
+By Gender,Female,2020-07-09,30,39.4
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-07-09,31,39.3
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-07-09,26.6,34.1
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-07-09,30,36.9
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-07-09,26.4,30.2
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-07-09,36.1,46.2
+By Education,Less than a high school diploma,2020-07-09,34.9,44
+By Education,High school diploma or GED,2020-07-09,28.6,34.6
+By Education,Some college/Associate's degree,2020-07-09,32.3,39.3
+By Education,Bachelor's degree or higher,2020-07-09,21.6,30.6
+By State,Alabama,2020-07-09,30.4,34.9
+By State,Alaska,2020-07-09,27.4,35.1
+By State,Arizona,2020-07-09,33.9,39.9
+By State,Arkansas,2020-07-09,34.8,40
+By State,California,2020-07-09,31.8,39.1
+By State,Colorado,2020-07-09,26.1,35.2
+By State,Connecticut,2020-07-09,26.7,31
+By State,Delaware,2020-07-09,23.3,31
+By State,District of Columbia,2020-07-09,20.8,23.8
+By State,Florida,2020-07-09,31.7,39
+By State,Georgia,2020-07-09,29,37.1
+By State,Hawaii,2020-07-09,28.3,31.4
+By State,Idaho,2020-07-09,27.5,32.4
+By State,Illinois,2020-07-09,23.7,28.9
+By State,Indiana,2020-07-09,29.4,36.8
+By State,Iowa,2020-07-09,17.7,25.2
+By State,Kansas,2020-07-09,24.8,28.8
+By State,Kentucky,2020-07-09,30.7,37.8
+By State,Louisiana,2020-07-09,31.1,40.6
+By State,Maine,2020-07-09,22.4,26.9
+By State,Maryland,2020-07-09,22.2,29.9
+By State,Massachusetts,2020-07-09,23.8,34.2
+By State,Michigan,2020-07-09,23,31.7
+By State,Minnesota,2020-07-09,22,27.5
+By State,Mississippi,2020-07-09,36.1,38
+By State,Missouri,2020-07-09,25.8,35.3
+By State,Montana,2020-07-09,28.5,35.6
+By State,Nebraska,2020-07-09,26.4,31.3
+By State,Nevada,2020-07-09,33.3,42.8
+By State,New Hampshire,2020-07-09,28.7,28.9
+By State,New Jersey,2020-07-09,28.7,37.1
+By State,New Mexico,2020-07-09,30.1,38.6
+By State,New York,2020-07-09,25,34.2
+By State,North Carolina,2020-07-09,26.4,34
+By State,North Dakota,2020-07-09,25.2,30.5
+By State,Ohio,2020-07-09,21.2,31.7
+By State,Oklahoma,2020-07-09,30.8,40.1
+By State,Oregon,2020-07-09,31.7,38.6
+By State,Pennsylvania,2020-07-09,27.5,34.2
+By State,Rhode Island,2020-07-09,31.1,36.5
+By State,South Carolina,2020-07-09,25.3,30.7
+By State,South Dakota,2020-07-09,24.1,32.6
+By State,Tennessee,2020-07-09,31.4,38.2
+By State,Texas,2020-07-09,32.2,40.6
+By State,Utah,2020-07-09,24.2,29.5
+By State,Vermont,2020-07-09,20.7,33.4
+By State,Virginia,2020-07-09,24,32.6
+By State,Washington,2020-07-09,27.2,35.7
+By State,West Virginia,2020-07-09,29.4,36.1
+By State,Wisconsin,2020-07-09,24.6,31.1
+By State,Wyoming,2020-07-09,21.7,29.4
+National Estimate,United States,2020-07-16,29.6,36.1
+By Age,18 - 29,2020-07-16,41.7,46.6
+By Age,30 - 39,2020-07-16,32.8,42.8
+By Age,40 - 49,2020-07-16,31,39.9
+By Age,50 - 59,2020-07-16,28.4,36.1
+By Age,60 - 69,2020-07-16,23.6,27.3
+By Age,70 - 79,2020-07-16,16.9,19.5
+By Age,80+,2020-07-16,12.6,13.4
+By Gender,Male,2020-07-16,27.8,32.1
+By Gender,Female,2020-07-16,31.3,39.8
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-07-16,34.2,41.9
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-07-16,27.7,34.2
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-07-16,32.1,35.8
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-07-16,30.5,35
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-07-16,33,43.8
+By Education,Less than a high school diploma,2020-07-16,38.4,42
+By Education,High school diploma or GED,2020-07-16,31.4,36.4
+By Education,Some college/Associate's degree,2020-07-16,33,38.1
+By Education,Bachelor's degree or higher,2020-07-16,22.2,32.2
+By State,Alabama,2020-07-16,32.7,39.9
+By State,Alaska,2020-07-16,27.4,33.8
+By State,Arizona,2020-07-16,34.3,41.3
+By State,Arkansas,2020-07-16,33.7,36.8
+By State,California,2020-07-16,31.2,38.9
+By State,Colorado,2020-07-16,29.1,38
+By State,Connecticut,2020-07-16,25.9,30.4
+By State,Delaware,2020-07-16,26.5,29
+By State,District of Columbia,2020-07-16,23.8,33.9
+By State,Florida,2020-07-16,30.7,35.1
+By State,Georgia,2020-07-16,29.7,35.5
+By State,Hawaii,2020-07-16,29.3,37.2
+By State,Idaho,2020-07-16,34.2,37.3
+By State,Illinois,2020-07-16,29.5,38
+By State,Indiana,2020-07-16,32,36.8
+By State,Iowa,2020-07-16,25.3,31.3
+By State,Kansas,2020-07-16,30.5,34.8
+By State,Kentucky,2020-07-16,30.6,35.9
+By State,Louisiana,2020-07-16,31.7,38.5
+By State,Maine,2020-07-16,25.3,35.7
+By State,Maryland,2020-07-16,29.5,33.2
+By State,Massachusetts,2020-07-16,23.7,31.1
+By State,Michigan,2020-07-16,28.6,36.3
+By State,Minnesota,2020-07-16,24.2,32.2
+By State,Mississippi,2020-07-16,36.5,38.6
+By State,Missouri,2020-07-16,24.8,34.9
+By State,Montana,2020-07-16,28.4,27.5
+By State,Nebraska,2020-07-16,25.2,30
+By State,Nevada,2020-07-16,38.6,43.7
+By State,New Hampshire,2020-07-16,28.8,34
+By State,New Jersey,2020-07-16,26.8,34.2
+By State,New Mexico,2020-07-16,37.6,44.7
+By State,New York,2020-07-16,29.3,36.2
+By State,North Carolina,2020-07-16,30.5,33.1
+By State,North Dakota,2020-07-16,26.8,30.3
+By State,Ohio,2020-07-16,24.9,32.8
+By State,Oklahoma,2020-07-16,33.5,39.6
+By State,Oregon,2020-07-16,36.4,45.4
+By State,Pennsylvania,2020-07-16,20.5,29.2
+By State,Rhode Island,2020-07-16,25.9,41.8
+By State,South Carolina,2020-07-16,32.3,35.7
+By State,South Dakota,2020-07-16,27.6,27.6
+By State,Tennessee,2020-07-16,33.7,40.1
+By State,Texas,2020-07-16,32.4,38.4
+By State,Utah,2020-07-16,28.5,34.6
+By State,Vermont,2020-07-16,21.4,29.2
+By State,Virginia,2020-07-16,27,34.2
+By State,Washington,2020-07-16,32.2,37.1
+By State,West Virginia,2020-07-16,28,31.1
+By State,Wisconsin,2020-07-16,23.9,29.9
+By State,Wyoming,2020-07-16,31.6,38.8
+National Estimate,United States,2020-08-19,24.5,31.4
+By Age,18 - 29,2020-08-19,35.4,41
+By Age,30 - 39,2020-08-19,27.9,37.7
+By Age,40 - 49,2020-08-19,23.8,33.1
+By Age,50 - 59,2020-08-19,23.8,31.1
+By Age,60 - 69,2020-08-19,19.7,25.2
+By Age,70 - 79,2020-08-19,14.8,18.2
+By Age,80+,2020-08-19,13.8,14.6
+By Gender,Male,2020-08-19,22.5,26.4
+By Gender,Female,2020-08-19,26.4,36.1
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-08-19,28.5,33.3
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-08-19,23.2,31.2
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-08-19,26.2,30.8
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-08-19,20.8,25.1
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-08-19,30.3,37.1
+By Education,Less than a high school diploma,2020-08-19,29.1,35.4
+By Education,High school diploma or GED,2020-08-19,27,30.1
+By Education,Some college/Associate's degree,2020-08-19,27.2,34.2
+By Education,Bachelor's degree or higher,2020-08-19,18.6,29.1
+By State,Alabama,2020-08-19,27.7,30.6
+By State,Alaska,2020-08-19,22.2,30.5
+By State,Arizona,2020-08-19,26.4,30.4
+By State,Arkansas,2020-08-19,23.9,30.5
+By State,California,2020-08-19,25.9,32.4
+By State,Colorado,2020-08-19,24.5,32.6
+By State,Connecticut,2020-08-19,23.8,33.9
+By State,Delaware,2020-08-19,20.1,24.6
+By State,District of Columbia,2020-08-19,23.8,30.6
+By State,Florida,2020-08-19,27.8,33.7
+By State,Georgia,2020-08-19,26.8,31.3
+By State,Hawaii,2020-08-19,22.8,35.4
+By State,Idaho,2020-08-19,22.8,28.7
+By State,Illinois,2020-08-19,23.5,33.7
+By State,Indiana,2020-08-19,25.4,32
+By State,Iowa,2020-08-19,20,28
+By State,Kansas,2020-08-19,24.3,32
+By State,Kentucky,2020-08-19,27.9,34.6
+By State,Louisiana,2020-08-19,26.9,37.1
+By State,Maine,2020-08-19,23.8,34.9
+By State,Maryland,2020-08-19,21.3,30.9
+By State,Massachusetts,2020-08-19,22.3,31.5
+By State,Michigan,2020-08-19,24.1,30.6
+By State,Minnesota,2020-08-19,18.3,28.6
+By State,Mississippi,2020-08-19,23.6,27.7
+By State,Missouri,2020-08-19,23.7,27.8
+By State,Montana,2020-08-19,18.6,27.9
+By State,Nebraska,2020-08-19,20.9,28
+By State,Nevada,2020-08-19,26.9,35.2
+By State,New Hampshire,2020-08-19,19.8,28.4
+By State,New Jersey,2020-08-19,24.7,33.3
+By State,New Mexico,2020-08-19,27.8,35.2
+By State,New York,2020-08-19,22.5,29.9
+By State,North Carolina,2020-08-19,20.5,28.4
+By State,North Dakota,2020-08-19,17.8,26.4
+By State,Ohio,2020-08-19,24.9,31.7
+By State,Oklahoma,2020-08-19,25.9,34
+By State,Oregon,2020-08-19,26.1,34.8
+By State,Pennsylvania,2020-08-19,23.8,31
+By State,Rhode Island,2020-08-19,19.2,29.9
+By State,South Carolina,2020-08-19,20.4,24.5
+By State,South Dakota,2020-08-19,15.2,20.9
+By State,Tennessee,2020-08-19,28.3,34.8
+By State,Texas,2020-08-19,25.7,31.1
+By State,Utah,2020-08-19,22.7,30.4
+By State,Vermont,2020-08-19,19.5,28
+By State,Virginia,2020-08-19,25.1,30.5
+By State,Washington,2020-08-19,23.6,32.7
+By State,West Virginia,2020-08-19,25.2,29
+By State,Wisconsin,2020-08-19,20.2,25.2
+By State,Wyoming,2020-08-19,21.9,32.8
+National Estimate,United States,2020-09-02,24.4,31.6
+By Age,18 - 29,2020-09-02,34.9,40.6
+By Age,30 - 39,2020-09-02,27.2,37.9
+By Age,40 - 49,2020-09-02,25.8,33.7
+By Age,50 - 59,2020-09-02,23.1,30.8
+By Age,60 - 69,2020-09-02,19.4,24.9
+By Age,70 - 79,2020-09-02,14.9,19.2
+By Age,80+,2020-09-02,13.3,17.7
+By Gender,Male,2020-09-02,22.8,27.2
+By Gender,Female,2020-09-02,26,35.5
+By Race/Hispanic ethnicity,Hispanic or Latino,2020-09-02,28.9,35.9
+By Race/Hispanic ethnicity,"Non-Hispanic white, single race",2020-09-02,22.7,30.4
+By Race/Hispanic ethnicity,"Non-Hispanic black, single race",2020-09-02,28.5,33
+By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",2020-09-02,19.1,21.5
+By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2020-09-02,31.4,42.1
+By Education,Less than a high school diploma,2020-09-02,33,38.9
+By Education,High school diploma or GED,2020-09-02,25.7,30.6
+By Education,Some college/Associate's degree,2020-09-02,27.5,33.8
+By Education,Bachelor's degree or higher,2020-09-02,18.4,28.5
+By State,Alabama,2020-09-02,25.2,33.7
+By State,Alaska,2020-09-02,23.6,28.4
+By State,Arizona,2020-09-02,26.5,33.4
+By State,Arkansas,2020-09-02,29.8,36
+By State,California,2020-09-02,27.6,34.2
+By State,Colorado,2020-09-02,22.7,33.4
+By State,Connecticut,2020-09-02,21.2,33.1
+By State,Delaware,2020-09-02,23.3,29.8
+By State,District of Columbia,2020-09-02,20.9,33.3
+By State,Florida,2020-09-02,25.3,31.3
+By State,Georgia,2020-09-02,23.2,31.1
+By State,Hawaii,2020-09-02,29.4,34.4
+By State,Idaho,2020-09-02,21.8,31.2
+By State,Illinois,2020-09-02,24.2,32.6
+By State,Indiana,2020-09-02,20.7,30
+By State,Iowa,2020-09-02,22.8,26.8
+By State,Kansas,2020-09-02,19.3,28.7
+By State,Kentucky,2020-09-02,30.1,34.2
+By State,Louisiana,2020-09-02,30.3,36.8
+By State,Maine,2020-09-02,20.4,29.8
+By State,Maryland,2020-09-02,23.3,29.8
+By State,Massachusetts,2020-09-02,20.5,28.7
+By State,Michigan,2020-09-02,23.4,32.4
+By State,Minnesota,2020-09-02,18.6,26
+By State,Mississippi,2020-09-02,28.4,31.3
+By State,Missouri,2020-09-02,21.8,29
+By State,Montana,2020-09-02,22.2,29.6
+By State,Nebraska,2020-09-02,21.7,25.7
+By State,Nevada,2020-09-02,27.1,32.1
+By State,New Hampshire,2020-09-02,22.1,31.6
+By State,New Jersey,2020-09-02,21.9,30.7
+By State,New Mexico,2020-09-02,27.5,34.7
+By State,New York,2020-09-02,25.1,33.5
+By State,North Carolina,2020-09-02,20.9,27.4
+By State,North Dakota,2020-09-02,17.4,22.2
+By State,Ohio,2020-09-02,25.4,32.1
+By State,Oklahoma,2020-09-02,26.5,34.5
+By State,Oregon,2020-09-02,26.7,36.9
+By State,Pennsylvania,2020-09-02,22.9,29.8
+By State,Rhode Island,2020-09-02,25.3,31.1
+By State,South Carolina,2020-09-02,22.9,27.7
+By State,South Dakota,2020-09-02,20.2,24.7
+By State,Tennessee,2020-09-02,24,27.6
+By State,Texas,2020-09-02,26.9,32.6
+By State,Utah,2020-09-02,22,29.2
+By State,Vermont,2020-09-02,19.6,30.2
+By State,Virginia,2020-09-02,22.4,29.1
+By State,Washington,2020-09-02,22.7,30.8
+By State,West Virginia,2020-09-02,26.9,33.5
+By State,Wisconsin,2020-09-02,19.3,27.5
+By State,Wyoming,2020-09-02,23.6,29.4
