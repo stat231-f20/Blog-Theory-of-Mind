@@ -32,12 +32,12 @@ This blog post looks at different aspects of mental and social health during the
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 ## GENERAL WORD CLOUD
 # read in data for general word cloud
-covid_words <- read_csv(paste0(path_ava, "text analysis/covid_words.csv"))
+covid_words <- read_csv(paste0(path_karen, "text analysis/covid_words.csv"))
 pal <- brewer.pal(8, "Dark2") # define color palette for word cloud
 set.seed(2) # set seed for reproducibility
 
 # read in data for general word cloud(
-covid_words <- read_csv(paste0(path_ava, "text analysis/covid_words.csv"))
+covid_words <- read_csv(paste0(path_karen, "text analysis/covid_words.csv"))
 
 pal <- brewer.pal(8, "Dark2") # define color palette for word cloud
 
@@ -92,7 +92,7 @@ covid_words %>%
 
 **Dataset 6: State Actions and Mandates in Response to Covid-19**
 
-- **Link:** https://coronavirus-resources.esri.com/datasets/NGA2::covid19-state-and-territory-actions-download?showData=true
+- **Link:** https://www.arcgis.com/home/item.html?id=90a137c9e0494ecab29672bba8cb3ee0&sublayer=0#data
 - **Description:** This dataset compiles information on how each state initially reacted to the pandemic around the month of March, 2020. The variables include written descriptions of what each state did in regard to curfew, masks, wage changes, non-essential business closures, limits on gathering, emergency declarations, travel restrictions, school closures, and more.
 - We focused in on three variables — mask policy, curfew, and wage changes.
 
@@ -106,7 +106,8 @@ These other datasets were used for the spatial visualizations, which required ex
 # Results
 
 ## Clustering of Anxiety Depression rates by Demographic Group
-[Click here to Explore these Patterns!](https://avatillman.shinyapps.io/kmeans_app/)
+
+<iframe height="650" width="100%" frameborder="no" title="K-means Clustering by Demographic" src="https://avatillman.shinyapps.io/kmeans_app/"> </iframe>
 
 # {.tabset .tabset-fade .tabset-pills}
 
@@ -118,6 +119,106 @@ These other datasets were used for the spatial visualizations, which required ex
 - For non-Hispanic groups, Asians have the lowest levels of anxiety and depression, followed by white, black, and Hispanic/other races, respectively
 - Females tend to have higher levels of anxiety and depression than males
 - Those with less than a high school diploma tend to be the most stressed and anxious, while those with a bachelor's degree or higher tend to be the least stressed and anxious
+
+## Elbow plots
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+# get datasets
+allgroups <- read.csv("/Users/avatillman/git/My-Repository/blogpost/allgroups.csv")
+
+#create subsets of the data based on groupings and run kmeans clustering on each grouping
+age <- allgroups %>%
+  filter(Group == "By Age") %>%
+  separate(Subgroup, into = c("Subgroup", "remove"), sep = " years", convert = TRUE) %>%
+  select(-remove) %>%
+  mutate(Subgroup = ifelse(Subgroup == "80", "80+", Subgroup))
+km_age <- kmeans(age[ , 4:5], centers = 4, nstart = 20)
+
+race <- allgroups %>%
+  filter(Group == c("By Race/Hispanic ethnicity"))
+km_race <- kmeans(race[ , 4:5], centers = 4, nstart = 20)
+
+gender <- allgroups %>%
+  filter(Group == "By Gender")
+km_gender <- kmeans(gender[ , 4:5], centers = 4, nstart = 20)
+
+edu <- allgroups %>%
+  filter(Group == "By Education")
+km_edu <- kmeans(edu[ , 4:5], centers = 4, nstart = 20)
+
+#elbow plot for age
+fig <- matrix(NA, nrow=10, ncol=2)
+
+#filling our matrix with the total within-cluster sum of squares for 1:10 clusters
+set.seed(80)
+for (i in 1:10){
+  fig[i,1] <- i
+  fig[i,2] <- kmeans(age[,4:5]
+                    , centers=i
+                    , nstart=20)$tot.withinss
+}
+
+#plotting the points in the dataframe
+ggplot(data = as.data.frame(fig[2:10,]), aes(x = V1, y = V2)) +
+  geom_point() + 
+  geom_line() +
+  scale_x_continuous(breaks=c(1:10)) +
+  labs(x = "K", y = expression("Total W"[k]), title = "Cluster Variation for Age Group Data")
+
+
+#elbow plot for race
+fig2 <- matrix(NA, nrow=10, ncol=2)
+
+set.seed(80)
+for (i in 1:10){
+  fig2[i,1] <- i
+  fig2[i,2] <- kmeans(race[,4:5]
+                    , centers=i
+                    , nstart=20)$tot.withinss
+}
+
+ggplot(data = as.data.frame(fig2[2:10,]), aes(x = V1, y = V2)) +
+  geom_point() + 
+  geom_line() +
+  scale_x_continuous(breaks=c(1:10)) +
+  labs(x = "K", y = expression("Total W"[k]), title = "Cluster Variation for Racially Grouped Data")
+
+#elbow plot for education level
+fig3 <- matrix(NA, nrow=10, ncol=2)
+
+set.seed(80)
+for (i in 1:10){
+  fig3[i,1] <- i
+  fig3[i,2] <- kmeans(edu[,4:5]
+                    , centers=i
+                    , nstart=20)$tot.withinss
+}
+
+ggplot(data = as.data.frame(fig3[2:10,]), aes(x = V1, y = V2)) +
+  geom_point() + 
+  geom_line() +
+  scale_x_continuous(breaks=c(1:10)) +
+  labs(x = "K", y = expression("Total W"[k]), title = "Cluster Variation for Data Grouped by Education")
+
+#elbow plot for gender
+fig4 <- matrix(NA, nrow=10, ncol=2)
+
+set.seed(80)
+for (i in 1:10){
+  fig4[i,1] <- i
+  fig4[i,2] <- kmeans(gender[,4:5]
+                    , centers=i
+                    , nstart=20)$tot.withinss
+}
+
+ggplot(data = as.data.frame(fig4[2:10,]), aes(x = V1, y = V2)) +
+  geom_point() + 
+  geom_line() +
+  scale_x_continuous(breaks=c(1:10)) +
+  labs(x = "K", y = expression("Total W"[k]), title = "Cluster Variation for Data Grouped by Gender")
+```
+
+**note: since rates of anxiety and depression were calculated in the same manner based on survey responses, standardizing the variables was not necessary
 
 ## Impact
 
@@ -145,7 +246,7 @@ We conducted a sentiment analysis on full text tweets from July 24 to August 30 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 ## SENTIMENT ANALYSIS
 # read in data for general sentiment analysis
-nrc_tweets_sent <- read_csv(paste0(path_ava, "text analysis/nrc_tweets_sent.csv"))
+nrc_tweets_sent <- read_csv(paste0(path_karen, "text analysis/nrc_tweets_sent.csv"))
 # plotting number of words by all sentiments in the tweets
 nrc_tweets_sent %>%
   ggplot(aes(x = reorder(sentiment,n), y = n, color = sentiment, fill = sentiment)) +
@@ -157,7 +258,7 @@ nrc_tweets_sent %>%
        title="Number of Words by Sentiment in Covid-19 Tweets") +
   guides(color = "none", fill = "none")
 # read in data for anxiety and depression related sentiment analysis
-nrc_tweets_words <- read_csv(paste0(path_ava, "text analysis/nrc_tweets_words.csv"))
+nrc_tweets_words <- read_csv(paste0(path_karen, "text analysis/nrc_tweets_words.csv"))
 # plotting words by anxiety and depression relevant sentiments
 ggplot(data = nrc_tweets_words, aes(x = reorder(word, n),
                                     y = n,
@@ -176,7 +277,7 @@ Since we noticed some overlap in the top 10 most common words for anxiety and de
 ```{r, warning = FALSE, message=FALSE}
 ## COMPARISON WORD CLOUD
 # read in data to create term document matrix for comparison and commonality clouds
-nrc_tweets_cloud <- read_csv(paste0(path_ava, "text analysis/nrc_tweets_cloud.csv"))
+nrc_tweets_cloud <- read_csv(paste0(path_karen, "text analysis/nrc_tweets_cloud.csv"))
 # create a term document matrix for the comparison.cloud function
 tdm <- nrc_tweets_cloud %>%
   # need to take unigrams in word out to create the matrix
@@ -230,11 +331,11 @@ Our text analyses could be improved by examining tweets about the pandemic over 
 
 Our spatial visualizations depict the values of certain explanatory variables across the contiguous United States during the months of April 2020 to August 2020, from near the beginning of the Covid-19 pandemic in the U.S. to the current time. We've chosen to hone in on anxiety and depression through time, our main dataset; social media counts of how many times Covid-19 was mentioned per county, through time; the initial state mandates in response to Covid-19 such as lockdown procedures; and the CDC's 2018 Social Vulnerability Index. Looking at these variables together should give us an idea of how these social factors may interact with each other during the current crisis. In addition to these variables, the hardest-hit cities have been represented by green dots on the map, which are sized according the number of cases in that city; this should provide a view of how regions highly impacted by the pandemic are performing with respect to our main variables.
 
-[Click here to explore some maps!](https://klingliu.shinyapps.io/blogproject/)
-
 ```{r, echo = FALSE}
 # knitr::include_app('https://klingliu.shinyapps.io/blogproject/', height = '1000px')
 ```
+
+<iframe height="1500" width="100%" frameborder="no" title="Investigating Social and Emotional Factors During Covid-19" src="https://klingliu.shinyapps.io/blogproject/"> </iframe>
 
 ```{r, echo = F}
 # Here, you can select a dataset to link to in case there is a need to quickly reference the source.
@@ -246,7 +347,7 @@ Our spatial visualizations depict the values of certain explanatory variables ac
 #                           "https://github.com/nytimes/covid-19-data",
 #                           "https://www.cdc.gov/nchs/covid19/health-care-access-and-mental-health.htm",
 #                           "https://coronavirus-resources.esri.com/datasets/feb6280d42de4e91b47cf37344a91eae_0?page=4&showData=true",
-#                           "https://coronavirus-resources.esri.com/datasets/NGA2::covid19-state-and-territory-actions-download?showData=true",
+#                           "https://www.arcgis.com/home/item.html?id=90a137c9e0494ecab29672bba8cb3ee0&sublayer=0#data",
 #                           "https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html"))
 # names(link_choices) <- c("None",
 #                          "Covid-19 Data",
@@ -336,16 +437,23 @@ State actions were also tricky to assess because too many underlying variables m
 
 # Conclusion
 
+- In addition to a strong correlation between anxiety and depression, levels of both variables seem to be influenced by age, race, gender, and education level. This can be connected to the amount of time certain groups spend on social media, and may be effected by the negative sentiments in Covid-19 tweets.
+- However, levels of anxiety and depression were not compared to levels before the Pandemic, so we cannot say for sure if these demographic-specific trends are the result of Covid-related stressors.
+- Individuals have been expressing high numbers of words associated with sadness, fear, and general negativity in their tweets about Covid-19, with the most commonly used word that spanned all 3 sentiments being "pandemic."
+- The main limitation of the text and sentiment analysis was that tweets were only collected from July to August, and only tweets with the hashtag #covid19 were used. Future research should examine covid-related tweets over a longer period of time with a broader range of hashtags or other search criteria in order to get a more representative and accurate sense of the most commonly used words and sentiments in covid-related tweets.
+- The overall conclusion that the map seems to support is that urban areas *and* socially vulnerable populations are by far the most likely to fall victim to Covid-19 and experience mental health decline. This is interesting because social vulnerability was not necessarily at its highest in the urban coastal areas, though it was certainly higher there than in rural areas. Regardless of the overlap between urbanism and social vulnerability, the relationship between these two groups and health detriments appears to be quite strong as we look at these maps side by side. Social media does not seem to have too high of a relationship with any of the other variables, and if it does, then social media activity's relationship to urbanism most likely eclipses any other relationships that may be able to appear. Interestingly, though, mentions of Covid-19 slowly increased from April to August; this is worth noting because, rather than becoming weary of discussing the pandemic, it seems that interest and concern steadily mounted as time continued.
+- State actions are difficult to quantify fairly, as we would have to weigh each variable's importance in the production of "stress". Furthermore, the quantification may be able to be improved by incorporating more of the variables. It would also be beneficial to perhaps look at a different quantification of social media activity. Another very important expansion would be to visualize level of urbanism across the country.
+
 
 # Bibliography
 
 1. Centers for Disease Control and Prevention/ Agency for Toxic Substances and Disease Registry/ Geospatial Research, Analysis, and Services Program. CDC Social Vulnerability Index 2018 Database US. https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html.
 2. Centers for Disease Control and Prevention/ National Center for Health Statistics. NCHS Household Pulse Survey, Anxiety and Depression. 2020. https://www.cdc.gov/nchs/covid19/pulse/mental-health.htm
 3. National Governors Association. COVID-19 State and Territory Actions Tracker. 2020. https://coronavirus-resources.esri.com/datasets/NGA2::covid19-state-and-territory-actions-download?showData=true
-4. Simplemaps. United States Cities Database. 2020. https://simplemaps.com/data/us-cities
-5. Spatial.ai & Datastory. COVID-19 Social Media Counts & Sentiment. 2020. https://coronavirus-resources.esri.com/datasets/feb6280d42de4e91b47cf37344a91eae_0?orderBy=current_fl&showData=true
-6. *The New York Times*. Coronavirus (Covid-19) Data in the United States. 2020. https://github.com/nytimes/covid-19-data
-
+4. Preda, G. (2020, August). COVID19 Tweets, Version 24. Retrieved November 17, 2020 from https://www.kaggle.com/gpreda/covid19-tweets.
+5. Simplemaps. United States Cities Database. 2020. https://simplemaps.com/data/us-cities
+6. Spatial.ai & Datastory. COVID-19 Social Media Counts & Sentiment. 2020. https://coronavirus-resources.esri.com/datasets/feb6280d42de4e91b47cf37344a91eae_0?orderBy=current_fl&showData=true
+7. *The New York Times*. Coronavirus (Covid-19) Data in the United States. 2020. https://github.com/nytimes/covid-19-data
 
 
 
